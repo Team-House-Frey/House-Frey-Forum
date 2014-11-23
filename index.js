@@ -1,30 +1,68 @@
 (function() {
-    var PARSE_APP_ID = "Zu3U44A1aWWNW4OhXnIHXWNQ7VONCUN3HD0AyvKY";
-    var PARSE_REST_API_KEY = "ibxBIPfgMp63zCsDwOFqAVDs1wGgbtF1mOuxz0FR";
-    var headers = {
-        "X-Parse-Application-Id": PARSE_APP_ID,
-        "X-Parse-REST-API-Key": PARSE_REST_API_KEY
+    var HEADERS = {
+        "X-Parse-Application-Id": 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
+        "X-Parse-REST-API-Key": 'VAkyH0zeF83ZB5BHHdRs7iLXFtmOBRZqj2J5kQBF'
     };
+
+    $.ajaxSetup({
+        headers: HEADERS,
+        error: ajaxError
+    });
 
     $(function() {
         loadCategories();
+        loadQuestions();
     });
 
     function loadCategories() {
-        jQuery.ajax({
+        $.ajax({
             method: 'GET',
-            headers: headers,
-            url: 'https://api.parse.com/1/classes/Categories',
-            success: categoriesLoaded,
-            error: ajaxError
+            url: 'https://api.parse.com/1/classes/Category',
+            success: categoriesLoaded
         });
     }
 
     function categoriesLoaded(data) {
+        var categoryList = $('#categories').append($('<li>')
+            .append($('<a>')
+                .attr('href', '#')
+                .text('All Categories')
+                .click(loadQuestions)));
+
         data.results.forEach(function(category) {
-            $('#categories')
-                .append($('<li>')
-                    .text(category.Name));
+            categoryList.append($('<li>')
+                .append($('<a>')
+                    .attr('href', '#')
+                    .data('category', category)
+                    .text(category.name)
+                    .click(loadQuestions)));
+        });
+    }
+
+    function loadQuestions() {
+        var category = $(this).data('category'),
+            whereClause = '';
+
+        if (category) {
+            whereClause = '{"category":{"__type":"Pointer","className":"Category","objectId":"' + category.objectId + '"}}';
+        }
+
+        $.ajax({
+            method: 'GET',
+            url: 'https://api.parse.com/1/classes/Question//?where=' + whereClause,
+            success: questionsLoaded
+        });
+    }
+
+    function questionsLoaded(data) {
+        var questionsDiv = $('#questions').empty();
+        data.results.forEach(function(question) {
+            questionsDiv.append($('<article>')
+                .append($('<a>')
+                    .attr('href', '#')
+                    .data('question', question)
+                    //.click(viewQuestion)
+                    .text(question.title)));
         });
     }
 
