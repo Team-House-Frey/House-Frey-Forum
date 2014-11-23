@@ -64,7 +64,7 @@
                     //.click(viewQuestion)
                     .text(question.title)));
         });
-    }
+        }
 
     function ajaxError() {
         alert('Ajax Error');

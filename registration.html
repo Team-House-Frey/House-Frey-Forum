@@ -2,9 +2,24 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Registration</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="scripts/registration.js"></script>
 </head>
 <body>
-
+    <form id="registrationForm">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName"><br>
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName"><br>
+        <label for="username">Username: </label><br>
+        <input type="text" id="username" name="username" required="true" minlength="3"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required="true" minlength="6"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <input type="submit" id="submit">
+    </form>
 </body>
 </html>
