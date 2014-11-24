@@ -10,6 +10,9 @@
     });
 
     $(function() {
+        $('#header').load('header.html', function() {
+            $.getScript('scripts/login.js');
+        });
         loadCategories();
         loadQuestions();
     });

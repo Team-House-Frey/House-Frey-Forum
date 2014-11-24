@@ -11,6 +11,9 @@
     });
 
     $(function() {
+        $('#header').load('header.html', function() {
+            $.getScript('scripts/login.js');
+        });
         loadQuestion();
         $('#toggle-reply-btn').click(toggleReplyArea);
         $('#save-reply-btn').click(addAnswer);
