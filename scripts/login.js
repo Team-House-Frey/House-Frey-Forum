@@ -1,7 +1,5 @@
 (function() {
-    var USERNAME,
-        PASSWORD,
-        HEADERS = {
+    var HEADERS = {
         'X-Parse-Application-Id': 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
         'X-Parse-REST-API-Key': 'VAkyH0zeF83ZB5BHHdRs7iLXFtmOBRZqj2J5kQBF'
     };
@@ -16,27 +14,34 @@
     });
 
     function loginUser() {
-        USERNAME = $('#login-username').val();
-        PASSWORD = $('#login-password').val();
+        if(HEADERS['X-Parse-Session-Token']){
+            $('#login-form').hide();
+            $('#registration').hide();
+        }
+
+        var username = $('#login-username').val();
+        var password = $('#login-password').val();
 
         $.ajax({
             method: 'GET',
-            url: 'https://api.parse.com/1/login?username=' + USERNAME + '&password=' + PASSWORD,
+            url: 'https://api.parse.com/1/login?username=' + username + '&password=' + password,
             success: welcomeUser,
             error: invalidLogin
         })
     }
 
-    function welcomeUser() {
+    function welcomeUser(data) {
+        HEADERS['X-Parse-Session-Token'] = data.sessionToken;
         $('#login-form').hide();
+        $('#registration').hide();
         $('#login-container')
             .append($('<span>')
-                .text('Welcome ' + USERNAME));
+                .text('Welcome ' + data.username));
     }
 
     function invalidLogin() {
         $('#login-container')
-            .append($('<span>')
+            .append($('<div>')
                 .text('Invalid login details')
                 .hide()
                 .fadeIn(500)
