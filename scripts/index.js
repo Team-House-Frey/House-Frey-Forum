@@ -59,12 +59,11 @@
         data.results.forEach(function(question) {
             questionsDiv.append($('<article>')
                 .append($('<a>')
-                    .attr('href', '#')
+                    .attr('href', 'viewQuestion.html?questionId=' + question.objectId)
                     .data('question', question)
-                    //.click(viewQuestion)
                     .text(question.title)));
         });
-        }
+    }
 
     function ajaxError() {
         alert('Ajax Error');

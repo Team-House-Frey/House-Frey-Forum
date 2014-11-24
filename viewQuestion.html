@@ -2,9 +2,25 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>View question</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="scripts/view-question.js"></script>
+    <style>
+        textarea {
+            display: block;
+            width: 400px;
+            height: 150px;
+        }
+    </style>
 </head>
 <body>
-
+    <section id="question"></section>
+    <button id="toggle-reply-btn">Reply</button>
+    <form id="new-answer-form">
+        <input type="text" id="user-name" placeholder="Please enter your name">
+        <input type="email" id="user-email" placeholder="Please enter your email">
+        <textarea id="answer-content" placeholder="Enter your reply here..."></textarea>
+        <button type="button" id="save-reply-btn">Add Reply</button>
+    </form>
 </body>
 </html>

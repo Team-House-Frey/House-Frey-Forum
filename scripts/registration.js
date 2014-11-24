@@ -25,21 +25,21 @@
     }
 
     function registerUser() {
-        var username = $('#username').val();
-        var password = $('#password').val();
-        var firstName = $('#firstName').val();
-        var lastName = $('#lastName').val();
-        var email = $('#email').val();
+        var username = $('#username').val(),
+            password = $('#password').val(),
+            firstName = $('#firstName').val(),
+            lastName = $('#lastName').val(),
+            email = $('#email').val();
 
         $.ajax({
             method: 'POST',
             url: 'https://api.parse.com/1/classes/_User',
             data: JSON.stringify({
-                'username' : username,
-                'password' : password,
-                'firstName' : firstName,
-                'lastName' : lastName,
-                'email' : email
+                'username': username,
+                'password': password,
+                'firstName': firstName,
+                'lastName': lastName,
+                'email': email
             }),
             contentType: 'application/json',
             success: successfullyRegisterUser
