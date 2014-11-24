@@ -29,6 +29,7 @@
 
     function questionLoaded(data) {
         var question = data.results[0];
+        $('title').text(question.title);
         $('#question')
             .empty()
             .append($('<h2>').text(question.title))
