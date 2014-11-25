@@ -10,11 +10,11 @@
     });
 
     $(function () {
-        if ($.cookie('session')) {
+        if (localStorage['session']) {
             $('#login-container').hide();
             $('#logged-in-container').show();
             $('#welcome-user')
-                .text('Welcome ' + $.cookie('username'));
+                .text('Welcome ' + localStorage.getItem('firstName'));
         }
 
         $('#submit-login').click(loginUser);
@@ -35,17 +35,20 @@
 
     function welcomeUser(data) {
         // HEADERS['X-Parse-Session-Token'] = data.sessionToken; // not sure if it's needed
-        $.cookie('session', data.sessionToken, {expires: 1});
-        $.cookie('username', data.username, {expires: 1});
+        localStorage.setItem('username', data.username);
+        localStorage.setItem('session', data.sessionToken);
+        localStorage.setItem('firstName', data.firstName);
+        localStorage.setItem('lastName', data.lastName);
+        localStorage.setItem('email', data.email);
         $('#registration').hide();
         $('#login-container').hide();
         $('#logged-in-container').show();
         $('#welcome-user')
-            .text('Welcome ' + $.cookie('username'));
+            .text('Welcome ' + localStorage.getItem('firstName'));
     }
 
     function logoutUser() {
-        $.removeCookie('session');
+        localStorage.removeItem('session');
         $('#welcome-user').html('<strong>Logging out ... </strong>');
         window.setTimeout('location.reload()', 2000);
     }
