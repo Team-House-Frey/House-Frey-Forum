@@ -1,0 +1,101 @@
+
+    body {
+        background-color: #55728b;
+
+        font: normal 11px "Open Sans",tahoma,helvetica,arial,sans-serif;
+        position: relative;
+        zoom: 1;
+        background-image: url("../../images/shattered.png");
+    }
+    aside ul li a {
+        background: url("../../images/nav_forums.png") no-repeat;
+        color: #fff;
+        text-align: right;
+        height: 40px;
+        width: 110px;
+        display: block;
+        outline: none;
+        line-height: 30px;
+        position: relative;
+    }
+    aside ul li a img {
+       background-color: #e95031;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    #addQuestion {
+        background: url("../../images/nav_content.png") no-repeat 50% 50%;
+        color: #fff;
+        text-align: center;
+        height: 40px;
+        padding-top: 70px;
+        width: 110px;
+        outline: none;
+        position: relative;
+        top: -44px;
+        left: 203px;
+    }
+    #registration {
+        background: url("../../images/nav_members.png") no-repeat 50% 50%;
+        color: #fff;
+        text-align: center;
+        height: 40px;
+        padding-top: 70px;
+        width: 110px;
+        outline: none;
+        position: relative;
+        top: -31px;
+        right: -104px;
+    }
+    #index {
+        background: url("../../images/nav_home.png") no-repeat 50% 50%;
+        color: #fff;
+        text-align: center;
+        height: 40px;
+        padding-top: 70px;
+        width: 110px;
+        display: block;
+        outline: none;
+        line-height: 30px;
+        position: relative;
+    }
+
+    #nav-menu {
+        display: inline-block;
+        height: 110px;
+        font-weight: bold;
+        margin-left: 7px;
+        width: 400px;
+
+    }
+    #search-field {
+        vertical-align: top;
+        height: 34px;
+        font-size: 12pt;
+    }
+    #search-form {
+        float: right;
+    }
+    #search-button{
+        background: cyan url("../../images/search_icon.png") no-repeat 50%;
+        width: 34px;
+        height: 34px;
+    }
+    #search {
+        display: inline;
+
+
+    }
+    #login-container {
+        display: inline-block;
+        height: 110px;
+        width: 310px;
+        color: #ffffff;
+    }
+    #login-form {
+        width: 173px;
+        height: 89px;
+        float: left;
+        padding: 3px;
+    }
