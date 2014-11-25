@@ -91,6 +91,9 @@
         width: 310px;
         color: #ffffff;
     }
+    #logged-in-container{
+        display: none;
+    }
     #login-form {
         width: 173px;
         height: 89px;

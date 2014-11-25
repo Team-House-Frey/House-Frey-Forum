@@ -37,7 +37,7 @@
         // HEADERS['X-Parse-Session-Token'] = data.sessionToken; // not sure if it's needed
         $.cookie('session', data.sessionToken, {expires: 1});
         $.cookie('username', data.username, {expires: 1});
-
+        $('#registration').hide();
         $('#login-container').hide();
         $('#logged-in-container').show();
         $('#welcome-user')
