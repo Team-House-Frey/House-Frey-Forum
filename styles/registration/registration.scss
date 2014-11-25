@@ -1,6 +1,6 @@
 $customRed: rgb(233, 80, 49);
-$customBlack: rgb(32, 32, 32);
-$customBlackTransparent: rgba(32, 32, 32, 0.5);
+$customBlack: rgb(50, 50, 50);
+$customBlackTransparent: rgba(32, 32, 32, 0.3);
 
 *{
   margin: 0;
@@ -14,7 +14,10 @@ html{
   body{
     width: 100%;
     height: 100%;
-    background-image: url('../../images/red-background.jpg');
+    zoom: 1;
+    position: relative;
+    background-color: #55728b;
+    background-image: url('../../images/shattered.png');
     background-size: cover;
     main{
       width: 60%;
