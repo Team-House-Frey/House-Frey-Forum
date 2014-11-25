@@ -1,4 +1,4 @@
-(function() {
+(function () {
     var HEADERS = {
         'X-Parse-Application-Id': 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
         'X-Parse-REST-API-Key': 'VAkyH0zeF83ZB5BHHdRs7iLXFtmOBRZqj2J5kQBF'
@@ -9,8 +9,8 @@
         error: ajaxError
     });
 
-    $(function() {
-        $('#header').load('header.html', function() {
+    $(function () {
+        $('#header').load('header.html', function () {
             $.getScript('scripts/login.js');
         });
         loadCategories();

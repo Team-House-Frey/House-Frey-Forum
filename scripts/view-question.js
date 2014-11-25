@@ -1,4 +1,4 @@
-(function() {
+(function () {
     var CURRENT_QUESTION_ID = getUrlParameter('questionId'),
         HEADERS = {
         'X-Parse-Application-Id': 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
@@ -10,8 +10,8 @@
         error: ajaxError
     });
 
-    $(function() {
-        $('#header').load('header.html', function() {
+    $(function () {
+        $('#header').load('header.html', function () {
             $.getScript('scripts/login.js');
         });
         loadQuestion();
