@@ -14,11 +14,6 @@
     });
 
     function loginUser() {
-        if(HEADERS['X-Parse-Session-Token']){
-            $('#login-form').hide();
-            $('#registration').hide();
-        }
-
         var username = $('#login-username').val();
         var password = $('#login-password').val();
 
@@ -32,6 +27,7 @@
 
     function welcomeUser(data) {
         HEADERS['X-Parse-Session-Token'] = data.sessionToken;
+
         $('#login-form').hide();
         $('#registration').hide();
         $('#login-container')
