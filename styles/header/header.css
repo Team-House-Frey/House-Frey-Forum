@@ -18,9 +18,7 @@
         line-height: 30px;
         position: relative;
     }
-    aside ul li a img {
-       background-color: #e95031;
-    }
+
     ol, ul {
         list-style: none;
     }
