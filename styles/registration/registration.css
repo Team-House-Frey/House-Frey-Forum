@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0; }
+
+html {
+  font-size: 62.5%;
+  width: 100%; }
+  html body {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../images/red-background.jpg");
+    background-size: cover; }
+    html body main {
+      width: 60%;
+      height: 60%;
+      margin: 5% auto;
+      font-size: 2rem;
+      background-color: rgba(32, 32, 32, 0.5);
+      padding: 2%;
+      border-radius: 3px; }
+      html body main .registration-form {
+        text-align: center;
+        margin: 5% auto;
+        width: 85%;
+        height: 65%;
+        background-color: #202020;
+        border: 2px solid #e95031;
+        border-radius: 5px;
+        color: white; }
+        html body main .registration-form div {
+          margin-bottom: 3%; }
+          html body main .registration-form div input {
+            float: right;
+            height: 25px;
+            border-radius: 2px;
+            border: 1px solid #e95031;
+            padding: 2%;
+            font-size: 1.5rem; }
+            html body main .registration-form div input:focus, html body main .registration-form div input:active {
+              outline: none; }
+          html body main .registration-form div label {
+            float: left; }
+          html body main .registration-form div:after {
+            content: ".";
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both; }
+        html body main .registration-form .user-data-wrapper {
+          width: 60%;
+          margin: 2% auto; }
+          html body main .registration-form .user-data-wrapper:after {
+            content: ".";
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both; }
+        html body main .registration-form button {
+          margin: 2% auto;
+          width: 20%;
+          height: 35px;
+          background-color: #e95031;
+          box-shadow: 5px 5px 1px 0 #5d2013;
+          -moz-box-shadow: 5px 5px 1px 0 #5d2013;
+          -webkit-shadow: 5px 5px 1px 0 #5d2013;
+          border: none;
+          outline: none;
+          color: #202020;
+          font-size: 2rem;
+          border-radius: 2px; }
+          html body main .registration-form button:focus, html body main .registration-form button:active {
+            outline: none; }
+          html body main .registration-form button:active {
+            position: relative;
+            top: 3px;
+            box-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-shadow: none; }
