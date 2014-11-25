@@ -1,6 +1,7 @@
 <div id="logo-container">
     <h1>House Frey Forum</h1>
     <!--<a href="index.html"><img src="images/logo.png" alt="logo"/></a>-->
+    <link rel="stylesheet" href="styles/header/header.css"/>
 </div>
 <div id="login-container">
     <form id="login-form">
@@ -10,12 +11,26 @@
         <input type="password" id="login-password"><br>
         <input type="button" id="submit-login" value="Login">
     </form>
-    <a href="registration.html" id="registration">Registration</a>
 </div>
-<form id="search-form">
-    <input type="text" id="search-field" placeholder="Enter a search phrase">
-    <button type="button" id="search-button">Search</button>
-</form>
+<div id="nav-menu">
+    <ul id="menu">
+        <li>
+            <a href="index.html" id="index">Home</a>
+        </li>
+        <li>
+            <a href="registration.html" id="registration">Registration</a>
+        </li>
+        <li>
+            <a href="addQuestion.html" id="addQuestion">Add question</a>
+        </li>
+    </ul>
+</div>
+<div id="search">
+    <form id="search-form">
+        <input type="text" id="search-field" placeholder="Enter a search phrase">
+        <button type="button" id="search-button"></button>
+    </form>
+</div>
 <aside>
     <ul id="categories"></ul>
 </aside>
