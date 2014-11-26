@@ -14,6 +14,13 @@
         $('#header').load('includes/header.html', function () {
             $.getScript('scripts/login.js');
         });
+
+        // Adds the username and email if the user is logged in.
+        if(sessionStorage['session']) {
+            $('#user-name').val(sessionStorage['username']);
+            $('#user-email').val(sessionStorage['email']);
+        }
+
         loadQuestion();
         $('#toggle-reply-btn').click(toggleReplyArea);
         $('#save-reply-btn').click(addAnswer);

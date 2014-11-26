@@ -21,8 +21,8 @@
     function validateInput() {
         var $this = $(this);
         $this.val($this.val()
-            .replace(/[^a-zA-Z0-9_@\.]/g, function(str) {
-                alert('You typed " ' + str + ' ".\n\nPlease use only letters, numbers and _.');
+            .replace(/[^a-zA-Z0-9!_@\.]/g, function(str) {
+                alert('You typed " ' + str + ' ".\n\nPlease use only latin letters, numbers and some of the allowed symbols ! @ _ .');
                 return '';
             }));
     }
