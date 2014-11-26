@@ -10,11 +10,10 @@
     });
 
     $(function () {
-        if (sessionStorage['session']) {
+        if (localStorage['session']) {
             $('#login-container').hide();
             $('#logged-in-container').show();
-            $('#welcome-user')
-                .text('Welcome ' + sessionStorage.getItem('firstName'));
+            $('#welcome-user').text('Welcome ' + localStorage['firstName']);
         }
 
         $('#submit-login').click(loginUser);
@@ -28,32 +27,24 @@
         $.ajax({
             method: 'GET',
             url: 'https://api.parse.com/1/login?username=' + username + '&password=' + password,
-            success: welcomeUser,
+            success: loginSuccessful,
             error: invalidLogin
         })
     }
 
-    function welcomeUser(data) {
-        // HEADERS['X-Parse-Session-Token'] = data.sessionToken; // not sure if it's needed
-        sessionStorage.setItem('username', data.username);
-        sessionStorage.setItem('session', data.sessionToken);
-        sessionStorage.setItem('firstName', data.firstName);
-        sessionStorage.setItem('lastName', data.lastName);
-        sessionStorage.setItem('email', data.email);
-        $('#registration').hide();
-        $('#login-container').hide();
-        $('#logged-in-container').show();
+    function loginSuccessful(data) {
+        localStorage['session'] = data.sessionToken;
+        localStorage['userId'] = data.objectId;
+        localStorage['username'] = data.username;
+        localStorage['firstName'] = data.firstName;
+        localStorage['lastName'] = data.lastName;
+        localStorage['email'] = data.email;
         location.reload();
-        $('#welcome-user')
-            .text('Welcome ' + sessionStorage.getItem('firstName'));
     }
 
     function logoutUser() {
-        for (var s in sessionStorage) {
-            sessionStorage.removeItem(s);
-        }
-        $('#welcome-user').html('<strong>Logging out ... </strong>');
-        window.setTimeout('location.href="index.html"', 2000);
+        localStorage.clear();
+        location.reload();
     }
 
     function invalidLogin() {

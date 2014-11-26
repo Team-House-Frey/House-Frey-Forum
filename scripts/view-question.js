@@ -15,13 +15,9 @@
             $.getScript('scripts/login.js');
         });
 
-        // Adds the username and email if the user is logged in.
-        if(sessionStorage['session']) {
-            $('#user-name').val(sessionStorage['username']);
-            $('#user-email').val(sessionStorage['email']);
-        }
-
         loadQuestion();
+        $('#user-name').val(localStorage['username']);
+        $('#user-email').val(localStorage['email']);
         $('#toggle-reply-btn').click(toggleReplyArea);
         $('#save-reply-btn').click(addAnswer);
     });
@@ -29,10 +25,7 @@
     function loadQuestion() {
         $.ajax({
             method: 'GET',
-            url: 'https://api.parse.com/1/classes/Question',
-            data: JSON.stringify({
-                'where':{'objectId':CURRENT_QUESTION_ID}
-            }),
+            url: 'https://api.parse.com/1/classes/Question?where={"objectId":"' + CURRENT_QUESTION_ID +'"}',
             success: questionLoaded
         });
     }
@@ -57,12 +50,10 @@
     }
 
     function loadAnswers() {
+        var currentQuestionObj = {'__type': 'Pointer','className': 'Question','objectId': CURRENT_QUESTION_ID};
         $.ajax({
             method: 'GET',
-            url: 'https://api.parse.com/1/classes/Answer',
-            data: JSON.stringify({
-                'where':{'question':"{__type':'Pointer','className':'Question','objectId':" + CURRENT_QUESTION_ID + "}"}
-            }),
+            url: 'https://api.parse.com/1/classes/Answer?where={"question":' + JSON.stringify(currentQuestionObj) +'}',
             success: answersLoaded
         });
     }
@@ -106,7 +97,7 @@
     }
 
     function toggleReplyArea() {
-        $('#new-answer-form').toggle(600);
+        $('#new-answer').toggle(600);
     }
 
     function convertDate(date) {

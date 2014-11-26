@@ -2,10 +2,44 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/header.css"/>
     <title>Add new question</title>
+    <link rel="stylesheet" href="styles/header.css"/>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="scripts/add-question.js"></script>
+    <style>
+        #new-question > * {
+            margin: 10px;
+            padding: 5px;
+            display: block;
+        }
+        #new-question > input {
+            width: 600px;
+        }
+        #new-question > select {
+            width: 200px;
+        }
+        #new-question > textarea {
+            width: 600px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <header id="header"></header>
+    <main>
+        <section id="new-question">
+            <input type="text" id="question-title" placeholder="Enter your question title here"/>
+            <input type="text" id="question-tags" placeholder="Enter your question tags here (comma separated)"/>
+            <textarea id="question-content" placeholder="Enter your question content here"></textarea>
+            <label for="question-category">Please select a category:</label>
+            <select id="question-category">
+                <option value="frEJN1n0mm" selected>Drinking</option>
+                <option value="E48TlVHigt">Sports</option>
+                <option value="juIl3kHgRb">Software</option>
+                <option value="CzUs9dybOG">Hardware</option>
+            </select>
+            <button type="button" id="add-question-btn">Add Question</button>
+        </section>
+    </main>
 </body>
 </html>
