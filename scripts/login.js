@@ -13,8 +13,7 @@
         if (localStorage['session']) {
             $('#login-container').hide();
             $('#logged-in-container').show();
-            $('#welcome-user')
-                .text('Welcome ' + localStorage.getItem('firstName'));
+            $('#welcome-user').text('Welcome ' + localStorage.getItem('firstName'));
         }
 
         $('#submit-login').click(loginUser);

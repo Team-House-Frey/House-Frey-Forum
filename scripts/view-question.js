@@ -11,7 +11,7 @@
     });
 
     $(function () {
-        $('#header').load('header.html', function () {
+        $('#header').load('includes/header.html', function () {
             $.getScript('scripts/login.js');
         });
         loadQuestion();

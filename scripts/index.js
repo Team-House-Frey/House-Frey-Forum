@@ -1,15 +1,8 @@
 (function () {
-    var HEADER_CSS = '<link rel="stylesheet" href="styles/header/header.css"/>';
-    var HEADER_FILE_PATH = 'header.html';
     var HEADERS = {
         'X-Parse-Application-Id': 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
         'X-Parse-REST-API-Key': 'VAkyH0zeF83ZB5BHHdRs7iLXFtmOBRZqj2J5kQBF'
     };
-
-    $(document).ready(function () {
-        $('head').append('', HEADER_CSS);
-        $('#header').load(HEADER_FILE_PATH);
-    });
 
     $.ajaxSetup({
         headers: HEADERS,
@@ -17,7 +10,7 @@
     });
 
     $(function () {
-        $('#header').load('header.html', function () {
+        $('#header').load('includes/header.html', function () {
             $.getScript('scripts/login.js');
         });
         loadCategories();
