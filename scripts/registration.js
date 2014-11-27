@@ -13,9 +13,15 @@
         $('#header').load('includes/header.html', function () {
             $.getScript('scripts/login.js');
         });
-        $('#registrationForm').validate();
+
+        var form = $('#registrationForm');
+        form.validate();
         $('input').keyup(validateInput);
-        $('#submit').click(registerUser);
+        $('#submit').click(function () {
+            if(form.valid()) {
+                registerUser();
+            }
+        });
     });
 
     function validateInput() {
