@@ -14,6 +14,10 @@
             $.getScript('scripts/login.js');
         });
 
+        if (localStorage['session']) {
+            location.href = 'index.html';
+        }
+
         var form = $('#registrationForm');
         form.validate();
         $('input').keyup(validateInput);
@@ -48,15 +52,17 @@
                 'password': password,
                 'firstName': firstName,
                 'lastName': lastName,
-                'email': email
+                'email': email,
+                'activity': 0
             }),
             contentType: 'application/json',
-            success: successfullyRegisterUser
+            success: registrationSuccessful
         });
     }
 
-    function successfullyRegisterUser() {
-        alert('User successfully registered.');
+    function registrationSuccessful() {
+        $('.user-data-wrapper, #submit').hide();
+        $('#registrationForm').append('<div>Registration successful. You may log in now.</div>')
     }
 
     function ajaxError() {

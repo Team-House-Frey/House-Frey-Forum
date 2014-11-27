@@ -34,19 +34,15 @@
 
     function questionLoaded(data) {
         var question = data.results[0];
-        var questionId = question.objectId;
-        var visitsCount = question.visitsCount;
-
-        if(visitsCount === undefined) {
-            visitsCount = 0;
-        }
 
         $.ajax({
             method: 'PUT',
-            url: 'https://api.parse.com/1/classes/Question/' + questionId,
-            data: JSON.stringify({'visitsCount': visitsCount + 1}),
+            url: 'https://api.parse.com/1/classes/Question/' + question.objectId,
+            data: JSON.stringify({
+                'visitsCount': question.visitsCount + 1
+            }),
             contentType: 'application/json'
-        })
+        });
 
         $('title').text(question.title);
         $('#main-content')
@@ -75,7 +71,7 @@
     }
 
     function answersLoaded(data) {
-        data.results.forEach(function (answer) {
+        data.results.forEach(function(answer) {
             $('#main-content')
                 .append($('<article>')
                     .addClass('answer')
@@ -96,14 +92,15 @@
 
         if (localStorage['session']) {
             HEADERS['X-Parse-Session-Token'] = localStorage['session'];
-            var activity = parseInt(localStorage['activity']) + 1;
-            localStorage['activity'] = activity;
+            localStorage['activity']++;
 
             $.ajax({
                 method: 'PUT',
                 headers: HEADERS,
                 url: 'https://api.parse.com/1/classes/_User/' + localStorage['userId'],
-                data: JSON.stringify({'activity': activity}),
+                data: JSON.stringify({
+                    'activity': localStorage['activity']
+                }),
                 contentType: 'application/json'
             })
         }
@@ -118,10 +115,7 @@
                 'question': {'__type': 'Pointer', 'className': 'Question', 'objectId': CURRENT_QUESTION_ID}
             }),
             contentType: 'application/json',
-            success: loadQuestion,
-            error: function () {
-                alert('old');
-            }
+            success: loadQuestion
         });
     }
 

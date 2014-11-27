@@ -36,6 +36,7 @@
                 'content': content,
                 'tags': tags,
                 'user_name': localStorage['username'],
+                'visitsCount': 0,
                 'user': {'__type':'Pointer','className':'_User','objectId':localStorage['userId']},
                 'category': {'__type':'Pointer','className':'Category','objectId':category}
             }),
