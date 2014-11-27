@@ -17,17 +17,39 @@ main {
     main section h1 {
       padding: 1%;
       height: 7%;
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: aliceblue;
       background-color: #e95031;
       font-weight: normal;
       border-bottom: 3px solid orange; }
+    main section .question {
+      background-color: aliceblue;
+      padding: 2%;
+      border-bottom: 1px solid darkgray; }
+      main section .question .content {
+        font-size: 1.8rem;
+        background-color: #ffffff; }
+      main section .question .nickname {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1%; }
+    main section .answer {
+      background-color: aliceblue;
+      padding: 2%;
+      border-bottom: 1px solid darkgray; }
+      main section .answer .nickname {
+        font-size: 1.3rem;
+        font-weight: bold; }
+      main section .answer .meta-data {
+        font-size: 1.4rem;
+        margin-bottom: 1%; }
     main section article {
       height: 30%;
       padding: 1% 2% 2% 2%;
       border-bottom: 1px groove orange;
       background-color: darkgray;
-      width: 100%; }
+      width: 100%;
+      font-size: 1.4rem; }
       main section article a {
         font-size: 1.7rem;
         color: whitesmoke;
@@ -36,27 +58,38 @@ main {
           color: #323232; }
   main .new-answer-wrapper {
     float: right;
-    width: 70%; }
+    width: 70%;
+    margin-top: 2%; }
+    main .new-answer-wrapper input {
+      height: 30px;
+      padding: 1%; }
+    main .new-answer-wrapper button {
+      height: 35px;
+      background-color: #e95031;
+      box-shadow: 3px 3px 1px 0 #5d2013;
+      -moz-box-shadow: 3px 3px 1px 0 #5d2013;
+      -webkit-shadow: 3px 3px 1px 0 #5d2013;
+      border: none;
+      outline: none;
+      color: #323232;
+      font-size: 2rem;
+      border-radius: 2px; }
+      main .new-answer-wrapper button:focus, main .new-answer-wrapper button:active {
+        outline: none; }
+      main .new-answer-wrapper button:active {
+        position: relative;
+        top: 3px;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-shadow: none; }
+    main .new-answer-wrapper #toggle-reply-btn {
+      width: 20%; }
+    main .new-answer-wrapper #save-reply-btn {
+      width: 35%;
+      margin-top: 2%; }
     main .new-answer-wrapper textarea {
       display: block;
       width: 400px;
-      height: 150px; }
-    main .new-answer-wrapper .question {
-      background-color: aliceblue;
-      padding: 5px;
-      border-bottom: 1px solid darkgray; }
-      main .new-answer-wrapper .question .content {
-        font-size: 1.3rem;
-        background-color: #ffffff; }
-      main .new-answer-wrapper .question .nickname {
-        font-size: 1.2rem;
-        font-weight: bold; }
-    main .new-answer-wrapper .answer {
-      background-color: aliceblue;
-      padding: 5px 5px 5px 25px;
-      border-bottom: 1px solid darkgray; }
-      main .new-answer-wrapper .answer .nickname {
-        font-size: 1.3rem;
-        font-weight: bold; }
-      main .new-answer-wrapper .answer .meta-data {
-        font-size: 0.8rem; }
+      height: 150px;
+      margin-top: 2%;
+      padding: 1%; }

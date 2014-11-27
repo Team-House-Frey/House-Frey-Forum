@@ -12,7 +12,7 @@
     $(function () {
         if (localStorage['session']) {
             $('#login-container').hide();
-            $('#logged-in-container').show();
+            $('#logged-in-container').css('display','inline-block');
             $('#welcome-user').text('Welcome ' + localStorage['firstName']);
         }
 

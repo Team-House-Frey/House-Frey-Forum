@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Bookman Old Style;}
+  font-family: Bookman Old Style; }
 
 html {
   font-size: 62.5%;
@@ -31,19 +31,19 @@ html {
         display: block;
         width: 55%;
         height: 50px; }
-        html body header ol li, html body header ul li {
-          text-align: left;
-          font-size: 1.5rem;
-          display: inline-block;
-          vertical-align: middle;
-          margin-right: 3%;
-          height: 100%;
-          background-color: #323232;
-          padding: 2%; }
-          html body header ol li a, html body header ul li a {
-            display: block;
-            width: 100%;
-            height: 100%; }
+      html body header ol li, html body header ul li {
+        text-align: left;
+        font-size: 1.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3%;
+        height: 100%;
+        background-color: #323232;
+        padding: 2%; }
+      html body header ol li a, html body header ul li a {
+        display: block;
+        width: 100%;
+        height: 100%; }
       html body header .logo-container {
         background-color: #323232;
         color: white; }
@@ -64,11 +64,20 @@ html {
               display: inline-block;
               outline: none;
               border: none; }
-            html body header .sub-container #login-container form input[type='text'], html body header .sub-container #login-container form input[type='password'] {
-              padding: 1%; }
-            html body header .sub-container #login-container form input[type='button'] {
-              width: 20%;
-              margin-left: 1%; }
+              html body header .sub-container #login-container form input[type='text'], html body header .sub-container #login-container form input[type='password'] {
+                padding: 1%; }
+              html body header .sub-container #login-container form input[type='button'] {
+                width: 20%;
+                margin-left: 1%; }
+        html body header .sub-container #logged-in-container {
+          width: 60%;
+          color: #ffffff;
+          font-size: 1.8rem; }
+          html body header .sub-container #logged-in-container a {
+            color: #323232;
+            text-decoration: none; }
+            html body header .sub-container #logged-in-container a:hover {
+              color: orange; }
         html body header .sub-container #addQuestion {
           color: #fff;
           text-align: center;
@@ -106,9 +115,10 @@ html {
           width: 34px;
           height: 34px;
           border-radius: 3px; }
-          html body header .sub-container #search-button:focus, html body header .sub-container #search-button:active {
+          html body header .sub-container #search-button:focus {
             outline: none; }
           html body header .sub-container #search-button:active {
+            outline: none;
             position: relative;
             top: 3px;
             box-shadow: none;

@@ -1,0 +1,176 @@
+$customRed: rgb(233, 80, 49);
+$customBlack: rgb(50, 50, 50);
+$backgound: slategray;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Bookman Old Style;
+}
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+  body {
+    background-color: #55728b;
+    font: normal 11px "Open Sans",tahoma,helvetica,arial,sans-serif;
+    position: relative;
+    zoom: 1;
+    background-image: url("../images/shattered.png");
+    header {
+      max-width: 70%;
+      margin: 0 auto;
+      aside ul li a {
+        background: url("../images/nav_forums.png") no-repeat;
+        color: #fff;
+        text-align: right;
+        height: 40px;
+        width: 110px;
+        display: block;
+        outline: none;
+        line-height: 30px;
+        position: relative;
+      }
+      ol, ul {
+        list-style: none;
+        display: block;
+        width: 55%;
+        height: 50px;
+      }
+      ol li, ul li {
+        text-align: left;
+        font-size: 1.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3%;
+        height: 100%;
+        background-color: #323232;
+        padding: 2%;
+      }
+      ol li a, ul li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .logo-container {
+        background-color: #323232;
+        color: white;
+      }
+      .sub-container {
+        background-color: #e95031;
+        border-bottom: 1px solid #323232;
+        padding: 1% 2% 0 2%;
+        #login-container {
+          display: inline-block;
+          width: 60%;
+          color: #ffffff;
+          font-size: 1.3rem;
+          form {
+            width: 100%;
+            input {
+              width: 25%;
+              height: 25px;
+              display: inline-block;
+              outline: none;
+              border: none;
+              &[type='text'], &[type='password'] {
+                padding: 1%;
+              }
+              &[type='button'] {
+                width: 20%;
+                margin-left: 1%;
+              }
+            }
+          }
+        }
+        #logged-in-container{
+          width: 60%;
+          color: #ffffff;
+          font-size: 1.8rem;
+          a{
+            color: $customBlack;
+            text-decoration: none;
+            &:hover{
+              color: orange;
+            }
+          }
+        }
+        #addQuestion {
+          color: #fff;
+          text-align: center;
+          outline: none;
+          &:before {
+            content: url("../images/nav_content.png");
+          }
+        }
+        #registration {
+          color: #fff;
+          text-align: center;
+          outline: none;
+          &:before {
+            content: url("../images/nav_members.png");
+          }
+        }
+        #index {
+          color: #fff;
+          outline: none;
+          &:before {
+            content: url("../images/nav_home.png");
+          }
+        }
+        #nav-menu {
+          display: block;
+          font-weight: bold;
+          margin-top: 2%;
+        }
+        #search-field {
+          vertical-align: top;
+          height: 34px;
+          font-size: 12pt;
+        }
+        #search-form {
+          float: right;
+        }
+        #search-button {
+          background: #323232 url("../images/search_icon.png") no-repeat 50%;
+          box-shadow: 3px 3px 1px 0 #5d2013;
+          -moz-box-shadow: 3px 3px 1px 0 #5d2013;
+          -webkit-shadow: 3px 3px 1px 0 #5d2013;
+          outline: 0;
+          border: none;
+          width: 34px;
+          height: 34px;
+          border-radius: 3px;
+          &:focus {
+            outline: none;
+          }
+          &:active {
+            outline: none;
+            position: relative;
+            top: 3px;
+            box-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-shadow: none;
+          }
+          &:hover {
+            background-color: #464646;
+            cursor: pointer;
+          }
+        }
+        #search {
+          display: inline;
+          width: 45%;
+        }
+        #logged-in-container {
+          display: none;
+        }
+        #login-form {
+          width: 173px;
+          float: left;
+          padding: 3px;
+        }
+      }
+    }
+  }
+}
