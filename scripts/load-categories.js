@@ -50,6 +50,10 @@ function loadQuestions() {
 
 function questionsLoaded(data) {
     var questionsDiv = $('#main-content').empty();
+    var newAnswerWrapper = $('#new-answer-wrapper');
+    if (newAnswerWrapper) {
+    	newAnswerWrapper.empty();
+    }
     questionsDiv.append($('<h1> Най-нови въпроси </h1>'));
     data.results.forEach(function(question) {
         questionsDiv.append($('<article>')

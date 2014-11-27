@@ -3,35 +3,60 @@ main {
   margin: 0 auto;
   background-color: slategray;
   padding: 2%; }
+  main:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both; }
   main section {
     vertical-align: top;
     display: inline-block;
     margin: 0 2%;
     width: 70%; }
-    main section h2 {
+    main section h1 {
+      padding: 1%;
+      height: 7%;
+      font-size: 2rem;
       color: aliceblue;
       background-color: #e95031;
-      padding: 5px; }
-  main textarea {
-    display: block;
-    width: 400px;
-    height: 150px; }
-  main .question {
-    background-color: aliceblue;
-    padding: 5px;
-    border-bottom: 1px solid darkgray; }
-    main .question .content {
-      font-size: 1.3rem;
-      background-color: #ffffff; }
-    main .question .nickname {
-      font-size: 1.2rem;
-      font-weight: bold; }
-  main .answer {
-    background-color: aliceblue;
-    padding: 5px 5px 5px 25px;
-    border-bottom: 1px solid darkgray; }
-    main .answer .nickname {
-      font-size: 1.3rem;
-      font-weight: bold; }
-    main .answer .meta-data {
-      font-size: 0.8rem; }
+      font-weight: normal;
+      border-bottom: 3px solid orange; }
+    main section article {
+      height: 30%;
+      padding: 1% 2% 2% 2%;
+      border-bottom: 1px groove orange;
+      background-color: darkgray;
+      width: 100%; }
+      main section article a {
+        font-size: 1.7rem;
+        color: whitesmoke;
+        text-decoration: none; }
+        main section article a:hover {
+          color: #323232; }
+  main .new-answer-wrapper {
+    float: right;
+    width: 70%; }
+    main .new-answer-wrapper textarea {
+      display: block;
+      width: 400px;
+      height: 150px; }
+    main .new-answer-wrapper .question {
+      background-color: aliceblue;
+      padding: 5px;
+      border-bottom: 1px solid darkgray; }
+      main .new-answer-wrapper .question .content {
+        font-size: 1.3rem;
+        background-color: #ffffff; }
+      main .new-answer-wrapper .question .nickname {
+        font-size: 1.2rem;
+        font-weight: bold; }
+    main .new-answer-wrapper .answer {
+      background-color: aliceblue;
+      padding: 5px 5px 5px 25px;
+      border-bottom: 1px solid darkgray; }
+      main .new-answer-wrapper .answer .nickname {
+        font-size: 1.3rem;
+        font-weight: bold; }
+      main .new-answer-wrapper .answer .meta-data {
+        font-size: 0.8rem; }

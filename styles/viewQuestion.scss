@@ -8,45 +8,75 @@ main {
   margin: 0 auto;
   background-color: $background;
   padding: 2%;
-  section {
+  &:after{
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  section{
     vertical-align: top;
     display: inline-block;
     margin: 0 2%;
     width: 70%;
-    h2 {
+    h1 {
+      padding: 1%;
+      height: 7%;
+      font-size: 2rem;
       color: aliceblue;
       background-color: $customRed;
+      font-weight: normal;
+      border-bottom: 3px solid orange;
+    }
+    article {
+        height: 30%;
+        padding: 1% 2% 2% 2%;
+        border-bottom: 1px groove orange;
+        background-color: darkgray;
+        width: 100%;
+        a {
+          font-size: 1.7rem;
+          color: whitesmoke;
+          text-decoration: none;
+          &:hover{
+            color: $customBlack;
+          }
+        }
+      }
+  }
+  .new-answer-wrapper {
+    float: right;
+    width: 70%;
+    textarea {
+      display: block;
+      width: 400px;
+      height: 150px;
+    }
+    .question {
+      background-color: aliceblue;
       padding: 5px;
+      border-bottom: 1px solid darkgray;
+      .content {
+        font-size: 1.3rem;
+        background-color: #ffffff;
+      }
+      .nickname {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
     }
-  }
-  textarea {
-    display: block;
-    width: 400px;
-    height: 150px;
-  }
-  .question {
-    background-color: aliceblue;
-    padding: 5px;
-    border-bottom: 1px solid darkgray;
-    .content {
-      font-size: 1.3rem;
-      background-color: #ffffff;
-    }
-    .nickname {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-  }
-  .answer {
-    background-color: aliceblue;
-    padding: 5px 5px 5px 25px;
-    border-bottom: 1px solid darkgray;
-    .nickname {
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-    .meta-data {
-      font-size: 0.8rem;
+    .answer {
+      background-color: aliceblue;
+      padding: 5px 5px 5px 25px;
+      border-bottom: 1px solid darkgray;
+      .nickname {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .meta-data {
+        font-size: 0.8rem;
+      }
     }
   }
 }

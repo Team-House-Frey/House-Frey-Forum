@@ -37,7 +37,7 @@
         $('title').text(question.title);
         $('#main-content')
             .empty()
-            .append($('<h2>').text(question.title))
+            .append($('<h1>').text(question.title))
             .append($('<article>')
                 .addClass('question')
                 .append($('<div>')
