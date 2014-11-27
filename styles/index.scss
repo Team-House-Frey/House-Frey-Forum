@@ -1,0 +1,60 @@
+$customRed: #e95031;
+$background: slategray;
+$groveOrange: groove orange;
+$customBlack: rgb(50, 50, 50);
+
+main {
+  background-color: $background;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2%;
+  aside {
+    border-right: dashed 1px #ffffff;
+    display: inline-block;
+    width: 20%;
+    ul li {
+      margin: 5px;
+      list-style-type: none;
+      a {
+        font-size: 1.7rem;
+        text-decoration: none;
+        color: whitesmoke;
+        &:hover {
+          font-size: 1.9rem;
+          text-decoration: none;
+          color: orange;
+        }
+      }
+    }
+  }
+  section {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 20px;
+    width: 70%;
+    h1 {
+      padding: 1%;
+      height: 7%;
+      font-size: 2rem;
+      color: aliceblue;
+      background-color: $customRed;
+      font-weight: normal;
+      border-bottom: 3px solid orange;
+    }
+    article {
+      height: 30%;
+      padding: 1% 2% 2% 2%;
+      border-bottom: 1px groove orange;
+      background-color: darkgray;
+      width: 100%;
+      a {
+        font-size: 1.7rem;
+        color: whitesmoke;
+        text-decoration: none;
+        &:hover{
+          color: $customBlack;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+$customRed: #e95031;
+$background: slategray;
+$groveOrange: groove orange;
+$customBlack: rgb(50, 50, 50);
+
+main {
+  max-width: 70%;
+  margin: 0 auto;
+  background-color: $background;
+  padding: 2%;
+  section {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 auto;
+    width: 70%;
+    h2 {
+      color: aliceblue;
+      background-color: $customRed;
+      padding: 5px;
+    }
+  }
+  textarea {
+    display: block;
+    width: 400px;
+    height: 150px;
+  }
+  .question {
+    background-color: aliceblue;
+    padding: 5px;
+    border-bottom: 1px solid darkgray;
+    .content {
+      font-size: 1.3rem;
+      background-color: #ffffff;
+    }
+    .nickname {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+  .answer {
+    background-color: aliceblue;
+    padding: 5px 5px 5px 25px;
+    border-bottom: 1px solid darkgray;
+    .nickname {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .meta-data {
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: Bookman Old Style;}
 
 html {
   font-size: 62.5%;
@@ -13,7 +14,7 @@ html {
     zoom: 1;
     background-image: url("../images/shattered.png"); }
     html body header {
-      max-width: 960px;
+      max-width: 70%;
       margin: 0 auto; }
       html body header aside ul li a {
         background: url("../images/nav_forums.png") no-repeat;

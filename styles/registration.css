@@ -4,11 +4,11 @@
   box-sizing: 0; }
 
 main {
-  max-width: 960px;
+  width: 70%;
   height: 60%;
   margin: 0 auto;
   font-size: 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: slategray;
   padding: 2%;
   border-radius: 3px; }
   main h1 {
@@ -18,15 +18,15 @@ main {
     margin: 5% auto;
     width: 75%;
     height: 65%;
-    background-color: #323232;
-    border: 2px solid #e95031;
+    background-color: darkgray;
+    border: 2px solid orange;
     border-radius: 5px;
     color: white; }
     main .registration-form div {
       margin-bottom: 3%; }
       main .registration-form div input {
         float: right;
-        height: 25px;
+        height: 30px;
         border-radius: 2px;
         border: 1px solid #e95031;
         padding: 2%;

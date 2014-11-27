@@ -1,0 +1,37 @@
+main {
+  max-width: 70%;
+  margin: 0 auto;
+  background-color: slategray;
+  padding: 2%; }
+  main section {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 auto;
+    width: 70%; }
+    main section h2 {
+      color: aliceblue;
+      background-color: #e95031;
+      padding: 5px; }
+  main textarea {
+    display: block;
+    width: 400px;
+    height: 150px; }
+  main .question {
+    background-color: aliceblue;
+    padding: 5px;
+    border-bottom: 1px solid darkgray; }
+    main .question .content {
+      font-size: 1.3rem;
+      background-color: #ffffff; }
+    main .question .nickname {
+      font-size: 1.2rem;
+      font-weight: bold; }
+  main .answer {
+    background-color: aliceblue;
+    padding: 5px 5px 5px 25px;
+    border-bottom: 1px solid darkgray; }
+    main .answer .nickname {
+      font-size: 1.3rem;
+      font-weight: bold; }
+    main .answer .meta-data {
+      font-size: 0.8rem; }

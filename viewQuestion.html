@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <title>View question</title>
     <link rel="stylesheet" href="styles/header.css"/>
+    <link rel="stylesheet" href="styles/viewQuestion.css"/>
+    <link rel="stylesheet" href="styles/categoriesSidebar.css"/>
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="scripts/view-question.js"></script>
-    <link rel="stylesheet" href="styles/view-question.css"/>
+
 </head>
 <body>
     <header id="header"></header>
     <main>
+        <aside>
+            <ul id="categories"></ul>
+        </aside>
         <section id="question"></section>
-        <button id="toggle-reply-btn">Reply</button>
-        <section id="new-answer">
-            <input type="text" id="user-name" placeholder="Please enter your name">
-            <input type="email" id="user-email" placeholder="Please enter your email">
-            <textarea id="answer-content" placeholder="Enter your reply here..."></textarea>
-            <button type="button" id="save-reply-btn">Add Reply</button>
-        </section>
+        <div class="new-answer-wrapper">
+            <button id="toggle-reply-btn">Reply</button>
+            <section id="new-answer">
+                <input type="text" id="user-name" placeholder="Please enter your name">
+                <input type="email" id="user-email" placeholder="Please enter your email">
+                <textarea id="answer-content" placeholder="Enter your reply here..."></textarea>
+                <button type="button" id="save-reply-btn">Add Reply</button>
+            </section>
+        </div>
     </main>
 </body>
 </html>
