@@ -1,9 +1,68 @@
 main {
-  max-width: 960px;
-  margin: 20px auto;
+  max-width: 70%;
+  margin: 0 auto;
   font-size: 1.9rem;
   color: #ffffff;
-  max-height: 100%; }
+  background-color: slategray;
+  padding: 2%; }
+  main h1 {
+    color: #323232; }
   main a {
     text-decoration: none;
     color: #e95031; }
+  main #new-question {
+    margin: 5% auto;
+    width: 75%;
+    height: 65%;
+    background-color: darkgray;
+    border: 2px solid orange;
+    border-radius: 5px;
+    color: white;
+    padding: 2%; }
+    main #new-question > div {
+      width: 90%;
+      margin: 0 auto 2% auto; }
+      main #new-question > div:after {
+        content: ".";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both; }
+      main #new-question > div label {
+        vertical-align: top; }
+    main #new-question input, main #new-question select, main #new-question textarea {
+      height: 35px;
+      width: 75%;
+      border-radius: 2px;
+      border: 1px solid #e95031;
+      float: right; }
+      main #new-question input:focus, main #new-question input:active, main #new-question select:focus, main #new-question select:active, main #new-question textarea:focus, main #new-question textarea:active {
+        outline: none; }
+    main #new-question input, main #new-question select, main #new-question textarea {
+      padding: 1%; }
+    main #new-question select:focus, main #new-question select:active {
+      outline: none; }
+    main #new-question textarea {
+      height: 150px; }
+    main #new-question button {
+      display: block;
+      margin: 5% auto 2% auto;
+      width: 20%;
+      height: 35px;
+      background-color: #e95031;
+      box-shadow: 3px 3px 1px 0 #5d2013;
+      -moz-box-shadow: 3px 3px 1px 0 #5d2013;
+      -webkit-shadow: 3px 3px 1px 0 #5d2013;
+      border: none;
+      outline: none;
+      color: #323232;
+      font-size: 2rem;
+      border-radius: 2px; }
+      main #new-question button:focus, main #new-question button:active {
+        outline: none; }
+      main #new-question button:active {
+        position: relative;
+        top: 3px;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-shadow: none; }

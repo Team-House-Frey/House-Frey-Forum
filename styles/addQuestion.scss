@@ -1,14 +1,91 @@
 $customRed: #e95031;
+$background: slategray;
+$groveOrange: groove orange;
+$customBlack: rgb(50, 50, 50);
 
 main {
-  max-width: 960px;
-  margin: 20px auto;
+  max-width: 70%;
+  margin: 0 auto;
   font-size: 1.9rem;
   color: #ffffff;
-  max-height: 100%;
+  background-color: $background;
+  padding: 2%;
+  h1{
+    color: $customBlack;
+  }
   a {
     text-decoration: none;
     color: $customRed;
+  }
+  #new-question{
+    margin: 5% auto;
+    width: 75%;
+    height: 65%;
+    background-color: darkgray;
+    border: 2px solid orange;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    padding: 2%;
+    > div{
+      width: 90%;
+      margin: 0 auto 2% auto;
+      &:after{
+        content: ".";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+      }
+      label{
+        vertical-align: top;
+      }
+    }
+    input, select, textarea{
+      height: 35px;
+      width: 75%;
+      border-radius: 2px;
+      border: 1px solid $customRed;
+      float: right;
+      &:focus, &:active{
+        outline: none;
+      }
+    }
+    input, select, textarea{
+      padding: 1%;
+    }
+    select{
+      &:focus, &:active{
+        outline: none;
+      }
+    }
+    textarea{
+      height: 150px;
+    }
+    button{
+      display: block;
+      margin: 5% auto 2% auto;
+      width: 20%;
+      height: 35px;
+      background-color: $customRed;
+      box-shadow: 3px 3px 1px 0 rgb(93,32,19);
+      -moz-box-shadow: 3px 3px 1px 0 rgb(93,32,19);
+      -webkit-shadow: 3px 3px 1px 0 rgb(93,32,19);
+      border: none;
+      outline: none;
+      color: $customBlack;
+      font-size: 2rem;
+      border-radius: 2px;
+      &:focus, &:active{
+        outline: none;
+      }
+      &:active {
+        position: relative;
+        top: 3px;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-shadow: none;
+      }
+    }
   }
 }
 

@@ -23,16 +23,21 @@ main {
       font-weight: normal;
       border-bottom: 3px solid orange; }
     main section .question {
-      background-color: aliceblue;
+      background-color: #acb2b7;
       padding: 2%;
       border-bottom: 1px solid darkgray; }
       main section .question .content {
         font-size: 1.8rem;
-        background-color: #ffffff; }
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 1%;
+        border-radius: 3px; }
       main section .question .nickname {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 1%; }
+      main section .question .meta-data {
+        font-size: 1.4rem;
+        margin-bottom: 2%; }
     main section .answer {
       background-color: aliceblue;
       padding: 2%;
