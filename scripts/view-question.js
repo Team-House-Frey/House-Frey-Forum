@@ -34,6 +34,20 @@
 
     function questionLoaded(data) {
         var question = data.results[0];
+        var questionId = question.objectId;
+        var visitsCount = question.visitsCount;
+
+        if(visitsCount === undefined) {
+            visitsCount = 0;
+        }
+
+        $.ajax({
+            method: 'PUT',
+            url: 'https://api.parse.com/1/classes/Question/' + questionId,
+            data: JSON.stringify({'visitsCount': visitsCount + 1}),
+            contentType: 'application/json'
+        })
+
         $('title').text(question.title);
         $('#main-content')
             .empty()
