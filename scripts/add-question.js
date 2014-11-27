@@ -40,8 +40,23 @@
                 'category': {'__type':'Pointer','className':'Category','objectId':category}
             }),
             contentType: 'application/json',
-            success: questionAdded
+            success: incrementUserActivity
         });
+    }
+
+    function incrementUserActivity() {
+        var activity = parseInt(localStorage.getItem('activity')) + 1;
+        var userId = localStorage.getItem('userId');
+        HEADERS['X-Parse-Session-Token'] = localStorage['session'];
+
+        $.ajax({
+            method: 'PUT',
+            headers: HEADERS,
+            url: 'https://api.parse.com/1/classes/_User/' + userId,
+            data: JSON.stringify({'activity': activity}),
+            contentType: 'application/json',
+            success: questionAdded
+        })
     }
 
     function questionAdded(question) {

@@ -39,6 +39,7 @@
         localStorage['firstName'] = data.firstName;
         localStorage['lastName'] = data.lastName;
         localStorage['email'] = data.email;
+        localStorage['activity'] = data.activity;
         location.reload();
     }
 
