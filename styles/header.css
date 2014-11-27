@@ -13,7 +13,7 @@ html {
     zoom: 1;
     background-image: url("../images/shattered.png"); }
     html body header {
-      width: 70%;
+      max-width: 960px;
       margin: 0 auto; }
       html body header aside ul li a {
         background: url("../images/nav_forums.png") no-repeat;

@@ -1,0 +1,22 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    font-family: Bookman Old Style;
+    font-size: 1.9em;
+    color: #ffffff;
+    max-height: 100%;
+}
+
+main article{
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #e95031;
+}

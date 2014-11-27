@@ -1,0 +1,57 @@
+main {
+    background-color: slategray;
+    font-family: "Bookman Old Style";
+    max-width: 960px;
+    margin: 20px auto;
+}
+
+main section {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 20px;
+    width: 70%;
+}
+
+main section h1 {
+    font-size: 2em;
+    color: aliceblue;
+    background-color: #e95031;
+    font-weight: normal;
+}
+
+main section article {
+    border-bottom: 1px groove orange;
+    background-color: darkgray;
+    width: 100%;
+
+}
+
+main section article a {
+    font-size: 1.3em;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+main aside {
+    border-right: dashed 1px #ffffff;
+    display: inline-block;
+    width: 20%;
+}
+
+main aside ul li {
+
+    margin: 5px;
+    list-style-type: none;
+}
+
+main aside ul li a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+main aside ul li a:hover {
+    font-size: 1.4em;
+    text-decoration: none;
+    color: orange;
+}

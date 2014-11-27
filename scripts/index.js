@@ -59,6 +59,7 @@
 
     function questionsLoaded(data) {
         var questionsDiv = $('#questions').empty();
+        questionsDiv.append($('<h1> Най-нови въпроси <h1/>'));
         data.results.forEach(function(question) {
             questionsDiv.append($('<article>')
                 .append($('<a>')

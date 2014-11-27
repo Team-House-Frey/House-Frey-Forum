@@ -1,0 +1,58 @@
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    font-family: "Bookman Old Style";
+}
+
+main section {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+main section h2 {
+    color: aliceblue;
+    background-color: #e95031;
+    padding: 5px;
+}
+
+main button {
+    margin-left: 96px;
+}
+
+textarea {
+    display: block;
+    width: 400px;
+    height: 150px;
+}
+
+.question {
+    background-color: aliceblue;
+    padding: 5px;
+    border-bottom: 1px solid darkgray;
+}
+
+.question .content {
+    font-size: 1.3em;
+    background-color: #ffffff;
+}
+
+.question .nickname {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.answer {
+    background-color: aliceblue;
+    padding: 5px 5px 5px 25px;
+    border-bottom: 1px solid darkgray;
+}
+
+.answer .nickname {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.answer .meta-data {
+    font-size: 0.8em;
+
+}

@@ -15,7 +15,7 @@
         });
 
         if(!localStorage['session']) {
-            $('#new-question').html('<article>Some login or register text with links</article>');
+            $('#new-question').html('<article>Please login or <a href="registration.html">register</a> in order to add a question.</article>');
             return;
         }
 
