@@ -16,7 +16,6 @@
         });
         $.getScript('scripts/load-categories.js', function () {
             loadCategories();
-            loadQuestions();
         });
         loadQuestion();
         $('#user-name').val(localStorage['username']);
@@ -36,7 +35,7 @@
     function questionLoaded(data) {
         var question = data.results[0];
         $('title').text(question.title);
-        $('#question')
+        $('#main-content')
             .empty()
             .append($('<h2>').text(question.title))
             .append($('<article>')
@@ -63,7 +62,7 @@
 
     function answersLoaded(data) {
         data.results.forEach(function(answer) {
-            $('#question')
+            $('#main-content')
                 .append($('<article>')
                     .addClass('answer')
                     .append($('<div>')

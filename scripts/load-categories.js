@@ -32,6 +32,7 @@ function categoriesLoaded(data) {
                 .click(loadQuestions)));
     });
 }
+
 function loadQuestions() {
     var category = $(this).data('category'),
         whereClause = '';
@@ -48,7 +49,7 @@ function loadQuestions() {
 }
 
 function questionsLoaded(data) {
-    var questionsDiv = $('#questions').empty();
+    var questionsDiv = $('#main-content').empty();
     questionsDiv.append($('<h1> Най-нови въпроси </h1>'));
     data.results.forEach(function(question) {
         questionsDiv.append($('<article>')
