@@ -8,29 +8,10 @@ main {
   max-width: 70%;
   margin: 0 auto;
   padding: 2%;
-  aside {
-    border-right: dashed 1px #ffffff;
-    display: inline-block;
-    width: 20%;
-    ul li {
-      margin: 5px;
-      list-style-type: none;
-      a {
-        font-size: 1.7rem;
-        text-decoration: none;
-        color: whitesmoke;
-        &:hover {
-          font-size: 1.9rem;
-          text-decoration: none;
-          color: orange;
-        }
-      }
-    }
-  }
   section {
     vertical-align: top;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 2%;
     width: 70%;
     h1 {
       padding: 1%;

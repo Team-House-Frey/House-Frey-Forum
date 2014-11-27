@@ -3,25 +3,10 @@ main {
   max-width: 70%;
   margin: 0 auto;
   padding: 2%; }
-  main aside {
-    border-right: dashed 1px #ffffff;
-    display: inline-block;
-    width: 20%; }
-    main aside ul li {
-      margin: 5px;
-      list-style-type: none; }
-      main aside ul li a {
-        font-size: 1.7rem;
-        text-decoration: none;
-        color: whitesmoke; }
-        main aside ul li a:hover {
-          font-size: 1.9rem;
-          text-decoration: none;
-          color: orange; }
   main section {
     vertical-align: top;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 2%;
     width: 70%; }
     main section h1 {
       padding: 1%;

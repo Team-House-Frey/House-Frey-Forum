@@ -1,4 +1,7 @@
 aside {
+  border-right: dashed 1px #ffffff;
+  display: inline-block;
+  width: 20%;
   ul {
     width: 100%;
     list-style: none;
@@ -17,6 +20,10 @@ aside {
       a {
         color: #fff;
         text-align: right;
+        &:hover {
+          font-size: 1.9rem;
+          text-decoration: none;
+          color: orange; }
       }
     }
   }
