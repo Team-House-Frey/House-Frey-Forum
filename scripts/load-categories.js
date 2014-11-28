@@ -50,23 +50,21 @@ function loadQuestions() {
 
 function questionsLoaded(data) {
     var questionsDiv = $('#main-content').empty();
-    var newAnswerWrapper = $('#new-answer-wrapper');
-    if (newAnswerWrapper) {
-    	newAnswerWrapper.empty();
-    }
-    questionsDiv.append($('<h1> Най-нови въпроси </h1>'));
-    data.results.forEach(function(question) {
+    $('#new-answer-wrapper').empty();
+    questionsDiv.append($('<h1> Последни въпроси </h1>'));
+    data.results.sort(questionSorter).forEach(function(question) {
         questionsDiv.append($('<article>')
             .append($('<a>')
                 .attr('href', 'viewQuestion.html?questionId=' + question.objectId)
                 .data('question', question)
                 .text(question.title)));
     });
+
+    function questionSorter(a, b){
+        return a.createdAt < b.createdAt;
+    }
 }
 
 function ajaxError() {
     alert('Ajax Error');
 }
-
-
-

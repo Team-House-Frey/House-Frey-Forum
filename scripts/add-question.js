@@ -46,20 +46,21 @@
     }
 
     function questionAdded(question) {
-        var activity = parseInt(localStorage.getItem('activity')) + 1;
-        var userId = localStorage.getItem('userId');
         HEADERS['X-Parse-Session-Token'] = localStorage['session'];
 
         $.ajax({
             method: 'PUT',
-            headers: HEADERS,
-            url: 'https://api.parse.com/1/classes/_User/' + userId,
-            data: JSON.stringify({'activity': activity}),
+            url: 'https://api.parse.com/1/classes/_User/' + localStorage['userId'],
+            data: '{"activity":{"__op":"Increment","amount":1}}',
             contentType: 'application/json',
-            success: questionAdded
+            success: redirectToQuestion,
+            error: redirectToQuestion
         });
 
-        location.href = 'viewQuestion.html?questionId=' + question.objectId;
+        function redirectToQuestion(data) {
+            localStorage['activity'] = data.activity || localStorage['activity'] + 1;
+            location.href = 'viewQuestion.html?questionId=' + question.objectId;
+        }
     }
 
     function ajaxError() {

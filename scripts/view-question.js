@@ -38,10 +38,9 @@
         $.ajax({
             method: 'PUT',
             url: 'https://api.parse.com/1/classes/Question/' + question.objectId,
-            data: JSON.stringify({
-                'visitsCount': question.visitsCount + 1
-            }),
-            contentType: 'application/json'
+            data: '{"visitsCount":{"__op":"Increment","amount":1}}',
+            contentType: 'application/json',
+            error: undefined
         });
 
         $('title').text(question.title);
@@ -92,17 +91,19 @@
 
         if (localStorage['session']) {
             HEADERS['X-Parse-Session-Token'] = localStorage['session'];
-            localStorage['activity']++;
 
             $.ajax({
                 method: 'PUT',
-                headers: HEADERS,
                 url: 'https://api.parse.com/1/classes/_User/' + localStorage['userId'],
-                data: JSON.stringify({
-                    'activity': localStorage['activity']
-                }),
-                contentType: 'application/json'
-            })
+                data: '{"activity":{"__op":"Increment","amount":1}}',
+                contentType: 'application/json',
+                success: activityUpdated,
+                error: activityUpdated
+            });
+
+            function activityUpdated(data) {
+                localStorage['activity'] = data.activity || localStorage['activity'] + 1;
+            }
         }
 
         $.ajax({
