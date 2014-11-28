@@ -41,11 +41,11 @@
                 'category': {'__type':'Pointer','className':'Category','objectId':category}
             }),
             contentType: 'application/json',
-            success: incrementUserActivity
+            success: questionAdded
         });
     }
 
-    function incrementUserActivity() {
+    function questionAdded(question) {
         var activity = parseInt(localStorage.getItem('activity')) + 1;
         var userId = localStorage.getItem('userId');
         HEADERS['X-Parse-Session-Token'] = localStorage['session'];
@@ -57,10 +57,8 @@
             data: JSON.stringify({'activity': activity}),
             contentType: 'application/json',
             success: questionAdded
-        })
-    }
+        });
 
-    function questionAdded(question) {
         location.href = 'viewQuestion.html?questionId=' + question.objectId;
     }
 
