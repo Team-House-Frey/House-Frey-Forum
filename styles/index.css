@@ -23,8 +23,15 @@ main {
       background-color: darkgray;
       width: 100%; }
       main section article a {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
         color: whitesmoke;
         text-decoration: none; }
         main section article a:hover {
           color: #323232; }
+      main section article .nickname {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1%; }
+      main section article .meta-data {
+        font-size: 1.4rem;
+        margin-top: 1%; }

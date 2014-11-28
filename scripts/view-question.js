@@ -22,6 +22,7 @@
         $('#user-email').val(localStorage['email']);
         $('#toggle-reply-btn').click(toggleReplyArea);
         $('#save-reply-btn').click(addAnswer);
+        toggleReplyArea();
     });
 
     function loadQuestion() {
