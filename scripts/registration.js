@@ -1,3 +1,7 @@
+String.prototype.capitalize = function capitlize() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
 (function () {
     var HEADERS = {
         'X-Parse-Application-Id': 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
@@ -56,13 +60,32 @@
                 'activity': 0
             }),
             contentType: 'application/json',
-            success: registrationSuccessful
+            success: registrationSuccessful,
+            error: function (error) {
+                var errorResponse = JSON.parse(error.responseText);
+                createMessegeBox('#dialog-message', errorResponse.error.capitalize());
+            }
         });
+    }
+
+    function createMessegeBox(selector, message) {
+        $(selector).text(message).dialog({
+            modal: true,
+            autoOpen: false,
+            buttons: {
+                Ok: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        }).dialog('open');
     }
 
     function registrationSuccessful() {
         $('.user-data-wrapper, #submit').hide();
-        $('#registrationForm').append('<div>Registration successful. You may log in now.</div>')
+        $('#registrationForm')
+            .append('', '<div class="successful-registration">Registration successful. You may log in now.</div>');
+        $('.successful-registration').animate({opacity: 1}, 1500);
+
     }
 
     function ajaxError() {

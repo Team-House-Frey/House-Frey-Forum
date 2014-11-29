@@ -86,5 +86,13 @@ main{
         -webkit-shadow: none;
       }
     }
+    .successful-registration{
+      color: darkgreen;
+      font-size: 2.5rem;
+      vertical-align: middle;
+      margin: 2% auto;
+      font-weight: bold;
+      opacity: 0;
+    }
   }
 }
