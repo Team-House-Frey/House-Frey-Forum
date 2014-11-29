@@ -15,54 +15,55 @@ main {
     height: 0;
     clear: both;
   }
-  section{
-    vertical-align: top;
+  > div {
     display: inline-block;
+    vertical-align: top;
     margin: 0 2%;
     width: 70%;
-    h1 {
-      padding: 1%;
-      height: 7%;
-      font-size: 2.5rem;
-      color: aliceblue;
-      background-color: $customRed;
-      font-weight: normal;
-      border-bottom: 3px solid orange;
-    }
-    .question {
-      background-color: rgb(172,178,183);
-      padding: 2%;
-      border-bottom: 1px solid darkgray;
-      .content {
-        font-size: 1.8rem;
-        background-color: rgba(255, 255, 255, 0.5);
+    section {
+      h1 {
         padding: 1%;
-        border-radius: 3px;
+        height: 7%;
+        font-size: 2.5rem;
+        color: aliceblue;
+        background-color: $customRed;
+        font-weight: normal;
+        border-bottom: 3px solid orange;
       }
-      .nickname {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 1%;
+      .question {
+        background-color: rgb(172, 178, 183);
+        padding: 2%;
+        border-bottom: 1px solid darkgray;
+        .content {
+          font-size: 1.8rem;
+          background-color: rgba(255, 255, 255, 0.5);
+          padding: 1%;
+          border-radius: 3px;
+        }
+        .nickname {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 1%;
+        }
+        .meta-data {
+          font-size: 1.4rem;
+          margin-bottom: 2%;
+        }
       }
-      .meta-data {
-        font-size: 1.4rem;
-        margin-bottom: 2%;
+      .answer {
+        background-color: aliceblue;
+        padding: 2%;
+        border-bottom: 1px solid darkgray;
+        .nickname {
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+        .meta-data {
+          font-size: 1.4rem;
+          margin-bottom: 1%;
+        }
       }
-    }
-    .answer {
-      background-color: aliceblue;
-      padding: 2%;
-      border-bottom: 1px solid darkgray;
-      .nickname {
-        font-size: 1.3rem;
-        font-weight: bold;
-      }
-      .meta-data {
-        font-size: 1.4rem;
-        margin-bottom: 1%;
-      }
-    }
-    article {
+      article {
         height: 30%;
         padding: 1% 2% 2% 2%;
         border-bottom: 1px groove orange;
@@ -73,55 +74,62 @@ main {
           font-size: 1.7rem;
           color: whitesmoke;
           text-decoration: none;
-          &:hover{
+          &:hover {
             color: $customBlack;
           }
         }
       }
-  }
-  .new-answer-wrapper {
-    float: right;
-    width: 70%;
-    margin-top: 2%;
-    input{
-      height: 30px;
-      padding: 1%;
     }
-    button{
-      height: 35px;
-      background-color: $customRed;
-      box-shadow: 3px 3px 1px 0 rgb(93,32,19);
-      -moz-box-shadow: 3px 3px 1px 0 rgb(93,32,19);
-      -webkit-shadow: 3px 3px 1px 0 rgb(93,32,19);
-      border: none;
-      outline: none;
-      color: $customBlack;
-      font-size: 2rem;
-      border-radius: 2px;
-      &:focus, &:active{
+    .new-answer-wrapper {
+      margin-top: 2%;
+      input {
+        height: 30px;
+        padding: 1%;
+      }
+      button {
+        margin-bottom: 2%;
+        height: 35px;
+        background-color: $customRed;
+        box-shadow: 3px 3px 1px 0 rgb(93, 32, 19);
+        -moz-box-shadow: 3px 3px 1px 0 rgb(93, 32, 19);
+        -webkit-shadow: 3px 3px 1px 0 rgb(93, 32, 19);
+        border: none;
         outline: none;
+        color: $customBlack;
+        font-size: 2rem;
+        border-radius: 2px;
+        &:focus, &:active {
+          outline: none;
+        }
+        &:active {
+          position: relative;
+          top: 3px;
+          box-shadow: none;
+          -moz-box-shadow: none;
+          -webkit-shadow: none;
+        }
       }
-      &:active {
-        position: relative;
-        top: 3px;
-        box-shadow: none;
-        -moz-box-shadow: none;
-        -webkit-shadow: none;
+      > div {
+        text-align: center;
+        #toggle-reply-btn {
+          width: 20%;
+        }
       }
-    }
-    #toggle-reply-btn{
-      width: 20%;
-    }
-    #save-reply-btn{
-      width: 35%;
-      margin-top: 2%;
-    }
-    textarea {
-      display: block;
-      width: 400px;
-      height: 150px;
-      margin-top: 2%;
-      padding: 1%;
+      >section{
+        margin: 0 auto;
+        text-align: center;
+        #save-reply-btn {
+          width: 35%;
+          margin-top: 2%;
+        }
+        textarea {
+          display: block;
+          margin: 2% auto;
+          width: 400px;
+          height: 150px;
+          padding: 1%;
+        }
+      }
     }
   }
 }

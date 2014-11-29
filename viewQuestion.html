@@ -16,15 +16,19 @@
         <aside>
             <ul id="categories"></ul>
         </aside>
-        <section id="main-content"></section>
-        <div id="new-answer-wrapper" class="new-answer-wrapper">
-            <button id="toggle-reply-btn">Reply</button>
-            <section id="new-answer">
-                <input type="text" id="user-name" placeholder="Please enter your name">
-                <input type="email" id="user-email" placeholder="Please enter your email" >
-                <textarea id="answer-content" placeholder="Enter your reply here..."></textarea>
-                <button type="button" id="save-reply-btn">Add Reply</button>
-            </section>
+        <div>
+            <section id="main-content"></section>
+            <div id="new-answer-wrapper" class="new-answer-wrapper">
+                <div>
+                    <button id="toggle-reply-btn">Reply</button>
+                </div>
+                <section id="new-answer"  data-is-hidden="true">
+                    <input type="text" id="user-name" placeholder="Please enter your name">
+                    <input type="email" id="user-email" placeholder="Please enter your email" >
+                    <textarea id="answer-content" placeholder="Enter your reply here..."></textarea>
+                    <button type="button" id="save-reply-btn">Add Reply</button>
+                </section>
+            </div>
         </div>
     </main>
 </body>

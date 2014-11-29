@@ -9,12 +9,12 @@ main {
     display: block;
     height: 0;
     clear: both; }
-  main section {
-    vertical-align: top;
+  main > div {
     display: inline-block;
+    vertical-align: top;
     margin: 0 2%;
     width: 70%; }
-    main section h1 {
+    main > div section h1 {
       padding: 1%;
       height: 7%;
       font-size: 2.5rem;
@@ -22,79 +22,83 @@ main {
       background-color: #e95031;
       font-weight: normal;
       border-bottom: 3px solid orange; }
-    main section .question {
+    main > div section .question {
       background-color: #acb2b7;
       padding: 2%;
       border-bottom: 1px solid darkgray; }
-      main section .question .content {
+      main > div section .question .content {
         font-size: 1.8rem;
         background-color: rgba(255, 255, 255, 0.5);
         padding: 1%;
         border-radius: 3px; }
-      main section .question .nickname {
+      main > div section .question .nickname {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 1%; }
-      main section .question .meta-data {
+      main > div section .question .meta-data {
         font-size: 1.4rem;
         margin-bottom: 2%; }
-    main section .answer {
+    main > div section .answer {
       background-color: aliceblue;
       padding: 2%;
       border-bottom: 1px solid darkgray; }
-      main section .answer .nickname {
+      main > div section .answer .nickname {
         font-size: 1.3rem;
         font-weight: bold; }
-      main section .answer .meta-data {
+      main > div section .answer .meta-data {
         font-size: 1.4rem;
         margin-bottom: 1%; }
-    main section article {
+    main > div section article {
       height: 30%;
       padding: 1% 2% 2% 2%;
       border-bottom: 1px groove orange;
       background-color: darkgray;
       width: 100%;
       font-size: 1.4rem; }
-      main section article a {
+      main > div section article a {
         font-size: 1.7rem;
         color: whitesmoke;
         text-decoration: none; }
-        main section article a:hover {
+        main > div section article a:hover {
           color: #323232; }
-  main .new-answer-wrapper {
-    float: right;
-    width: 70%;
-    margin-top: 2%; }
-    main .new-answer-wrapper input {
-      height: 30px;
-      padding: 1%; }
-    main .new-answer-wrapper button {
-      height: 35px;
-      background-color: #e95031;
-      box-shadow: 3px 3px 1px 0 #5d2013;
-      -moz-box-shadow: 3px 3px 1px 0 #5d2013;
-      -webkit-shadow: 3px 3px 1px 0 #5d2013;
-      border: none;
-      outline: none;
-      color: #323232;
-      font-size: 2rem;
-      border-radius: 2px; }
-      main .new-answer-wrapper button:focus, main .new-answer-wrapper button:active {
-        outline: none; }
-      main .new-answer-wrapper button:active {
-        position: relative;
-        top: 3px;
-        box-shadow: none;
-        -moz-box-shadow: none;
-        -webkit-shadow: none; }
-    main .new-answer-wrapper #toggle-reply-btn {
-      width: 20%; }
-    main .new-answer-wrapper #save-reply-btn {
-      width: 35%;
+    main > div .new-answer-wrapper {
       margin-top: 2%; }
-    main .new-answer-wrapper textarea {
-      display: block;
-      width: 400px;
-      height: 150px;
-      margin-top: 2%;
-      padding: 1%; }
+      main > div .new-answer-wrapper input {
+        height: 30px;
+        padding: 1%; }
+      main > div .new-answer-wrapper button {
+        margin-bottom: 2%;
+        height: 35px;
+        background-color: #e95031;
+        box-shadow: 3px 3px 1px 0 #5d2013;
+        -moz-box-shadow: 3px 3px 1px 0 #5d2013;
+        -webkit-shadow: 3px 3px 1px 0 #5d2013;
+        border: none;
+        outline: none;
+        color: #323232;
+        font-size: 2rem;
+        border-radius: 2px; }
+        main > div .new-answer-wrapper button:focus, main > div .new-answer-wrapper button:active {
+          outline: none; }
+        main > div .new-answer-wrapper button:active {
+          position: relative;
+          top: 3px;
+          box-shadow: none;
+          -moz-box-shadow: none;
+          -webkit-shadow: none; }
+      main > div .new-answer-wrapper > div {
+        text-align: center; }
+        main > div .new-answer-wrapper > div #toggle-reply-btn {
+          width: 20%; }
+      main > div .new-answer-wrapper > section {
+        margin: 0 auto;
+        text-align: center; }
+        main > div .new-answer-wrapper > section #save-reply-btn {
+          width: 35%;
+          margin-top: 2%; }
+        main > div .new-answer-wrapper > section textarea {
+          display: block;
+          margin: 2% auto;
+          width: 400px;
+          height: 150px;
+          padding: 1%; }

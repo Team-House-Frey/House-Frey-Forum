@@ -22,7 +22,7 @@
         $('#user-email').val(localStorage['email']);
         $('#toggle-reply-btn').click(toggleReplyArea);
         $('#save-reply-btn').click(addAnswer);
-        toggleReplyArea();
+        $('#new-answer').hide();
     });
 
     function loadQuestion() {
@@ -126,7 +126,15 @@
     }
 
     function toggleReplyArea() {
-        $('#new-answer').toggle(600);
+        var  $newAnswer = $('#new-answer');
+        if ($newAnswer.attr('data-is-hidden') === 'true') {
+            $newAnswer.slideDown();
+            $newAnswer.attr('data-is-hidden', 'false');
+        } else {
+            $newAnswer.slideUp();
+            $newAnswer.attr('data-is-hidden', 'true');
+        }
+
     }
 
     function convertDate(date) {
