@@ -139,9 +139,14 @@
 
     function convertDate(date) {
         var dateTokens = date.substring(0, 10).split('-'),
-            timeTokens = date.substring(11, 19).split(':');
+            timeTokens = date.substring(11, 19).split(':'),
+            fullHours = (Number(timeTokens[0]) + 2);
+        if (fullHours >= 24) {
+            fullHours -= 24;
+        }
+
         return dateTokens[2] + '-' + dateTokens[1] + '-' + dateTokens[0] + ' at ' +
-            (Number(timeTokens[0]) + 2) + ':' + timeTokens[1] + ':' + timeTokens[2];
+            fullHours + ':' + timeTokens[1] + ':' + timeTokens[2];
     }
 
     function getUrlParameter(sParam) {

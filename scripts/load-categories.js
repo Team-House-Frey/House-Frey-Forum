@@ -54,9 +54,9 @@ function questionsLoaded(data) {
     $questionsDiv.append('', $('<h1> Последни въпроси </h1>'));
 
     data.results.sort(questionSorter).forEach(function(question) {
-        var $question = $('<article>');
-        var $questionTitle = $('<a>');
-        var $questionDetails = $('<div>');
+        var $question = $('<article>'),
+            $questionTitle = $('<a>'),
+            $questionDetails = $('<div>');
 
         $questionTitle
             .attr('href', 'viewQuestion.html?questionId=' + question.objectId)
@@ -74,8 +74,8 @@ function questionsLoaded(data) {
     });
 
     function questionSorter(a, b){
-        var firstDate = Date.parse(a.createdAt);
-        var secondDate = Date.parse(b.createdAt);
+        var firstDate = Date.parse(a.createdAt),
+            secondDate = Date.parse(b.createdAt);
         return firstDate < secondDate;
     }
 
