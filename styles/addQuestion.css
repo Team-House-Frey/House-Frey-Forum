@@ -48,6 +48,7 @@ main {
       height: 150px; }
     main #new-question button {
       display: block;
+      cursor: pointer;
       margin: 5% auto 2% auto;
       width: 20%;
       height: 35px;

@@ -9,7 +9,7 @@ html {
   width: 100%; }
   html body {
     background-color: #55728b;
-    font: normal 11px "Open Sans",tahoma,helvetica,arial,sans-serif;
+    font: normal 11px "Open Sans", tahoma, helvetica, arial, sans-serif;
     position: relative;
     zoom: 1;
     background-image: url("../images/shattered.png"); }
@@ -46,7 +46,8 @@ html {
         height: 100%; }
       html body header .logo-container {
         background-color: #323232;
-        color: white; }
+        color: white;
+        padding: 10px; }
       html body header .sub-container {
         background-color: #e95031;
         border-bottom: 1px solid #323232;
@@ -68,11 +69,14 @@ html {
                 padding: 1%; }
               html body header .sub-container #login-container form input[type='button'] {
                 width: 20%;
-                margin-left: 1%; }
+                margin-left: 1%;
+                cursor: pointer; }
         html body header .sub-container #logged-in-container {
           width: 60%;
           color: #ffffff;
           font-size: 1.8rem; }
+          html body header .sub-container #logged-in-container p {
+            display: inline-block; }
           html body header .sub-container #logged-in-container a {
             color: #323232;
             text-decoration: none; }
@@ -114,7 +118,8 @@ html {
           border: none;
           width: 34px;
           height: 34px;
-          border-radius: 3px; }
+          border-radius: 3px;
+          margin-left: -3px; }
           html body header .sub-container #search-button:focus {
             outline: none; }
           html body header .sub-container #search-button:active {

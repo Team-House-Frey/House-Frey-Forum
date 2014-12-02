@@ -56,6 +56,7 @@ html {
       .logo-container {
         background-color: #323232;
         color: white;
+        padding: 10px;
       }
       .sub-container {
         background-color: #e95031;
@@ -80,6 +81,7 @@ html {
               &[type='button'] {
                 width: 20%;
                 margin-left: 1%;
+                cursor: pointer;
               }
             }
           }
@@ -88,7 +90,10 @@ html {
           width: 60%;
           color: #ffffff;
           font-size: 1.8rem;
-          a{
+          p {
+            display: inline-block;
+          }
+          a {
             color: $customBlack;
             text-decoration: none;
             &:hover{
@@ -142,6 +147,7 @@ html {
           width: 34px;
           height: 34px;
           border-radius: 3px;
+          margin-left: -3px;
           &:focus {
             outline: none;
           }

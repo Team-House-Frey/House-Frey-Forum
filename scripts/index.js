@@ -3,7 +3,7 @@
         $('#header').load('includes/header.html', function () {
             $.getScript('scripts/login.js');
         });
-        $.getScript('scripts/load-categories.js', function () {
+        $.getScript('scripts/common.js', function () {
             loadCategories();
             loadQuestions();
         });

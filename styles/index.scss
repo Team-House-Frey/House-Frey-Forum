@@ -36,14 +36,17 @@ main {
           color: $customBlack;
         }
       }
-      .nickname {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 1%;
-      }
       .meta-data {
         font-size: 1.4rem;
         margin-top: 1%;
+        .nickname {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 1%;
+        }
+        .question-visits {
+          float: right;
+        }
       }
     }
   }

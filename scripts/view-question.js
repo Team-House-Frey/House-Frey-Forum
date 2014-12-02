@@ -14,7 +14,7 @@
         $('#header').load('includes/header.html', function () {
             $.getScript('scripts/login.js');
         });
-        $.getScript('scripts/load-categories.js', function () {
+        $.getScript('scripts/common.js', function () {
             loadCategories();
         });
         loadQuestion();
@@ -52,7 +52,8 @@
                 .addClass('question')
                 .append($('<div>')
                     .html('Asked on <span class="date">' + convertDate(question.createdAt) +
-                    '</span> by <span class="nickname">' + question.user_name + '<span>')
+                        '</span> by <span class="nickname">' + question.user_name + '</span>' +
+                        '<span class="question-tags">Tags: ' + question.tags  + '</span>')
                     .addClass('meta-data'))
                 .append($('<div>')
                     .text(question.content)
@@ -65,7 +66,7 @@
         var currentQuestionObj = {'__type': 'Pointer', 'className': 'Question', 'objectId': CURRENT_QUESTION_ID};
         $.ajax({
             method: 'GET',
-            url: 'https://api.parse.com/1/classes/Answer?where={"question":' + JSON.stringify(currentQuestionObj) + '}',
+            url: 'https://api.parse.com/1/classes/Answer?order=createdAt&where={"question":' + JSON.stringify(currentQuestionObj) + '}',
             success: answersLoaded
         });
     }
@@ -114,6 +115,7 @@
                 'content': content,
                 'user_email': email,
                 'user_name': user_name,
+                'ACL': {'*': {'read':true}},
                 'question': {'__type': 'Pointer', 'className': 'Question', 'objectId': CURRENT_QUESTION_ID}
             }),
             contentType: 'application/json',

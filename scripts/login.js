@@ -11,9 +11,10 @@
 
     $(function () {
         if (localStorage['session']) {
-            $('#login-container').hide();
-            $('#logged-in-container').css('display','inline-block');
             $('#welcome-user').text('Welcome ' + localStorage['firstName']);
+            $('#login-container').hide();
+            $('#logged-in-container').show();
+            $('#registration').parent().hide();
         }
 
         $('#submit-login').click(loginUser);

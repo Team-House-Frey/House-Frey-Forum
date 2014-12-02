@@ -40,14 +40,17 @@ main {
           padding: 1%;
           border-radius: 3px;
         }
-        .nickname {
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin-bottom: 1%;
-        }
         .meta-data {
           font-size: 1.4rem;
           margin-bottom: 2%;
+          .nickname {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1%;
+          }
+          .question-tags {
+            float: right;
+          }
         }
       }
       .answer {
@@ -112,6 +115,7 @@ main {
       > div {
         text-align: center;
         #toggle-reply-btn {
+          cursor: pointer;
           width: 20%;
         }
       }
@@ -119,6 +123,7 @@ main {
         margin: 0 auto;
         text-align: center;
         #save-reply-btn {
+          cursor: pointer;
           width: 35%;
           margin-top: 2%;
         }

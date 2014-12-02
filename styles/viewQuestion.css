@@ -31,13 +31,15 @@ main {
         background-color: rgba(255, 255, 255, 0.5);
         padding: 1%;
         border-radius: 3px; }
-      main > div section .question .nickname {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 1%; }
       main > div section .question .meta-data {
         font-size: 1.4rem;
         margin-bottom: 2%; }
+        main > div section .question .meta-data .nickname {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 1%; }
+        main > div section .question .meta-data .question-tags {
+          float: right; }
     main > div section .answer {
       background-color: aliceblue;
       padding: 2%;
@@ -89,11 +91,13 @@ main {
       main > div .new-answer-wrapper > div {
         text-align: center; }
         main > div .new-answer-wrapper > div #toggle-reply-btn {
+          cursor: pointer;
           width: 20%; }
       main > div .new-answer-wrapper > section {
         margin: 0 auto;
         text-align: center; }
         main > div .new-answer-wrapper > section #save-reply-btn {
+          cursor: pointer;
           width: 35%;
           margin-top: 2%; }
         main > div .new-answer-wrapper > section textarea {
