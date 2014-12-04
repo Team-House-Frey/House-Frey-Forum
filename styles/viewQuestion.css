@@ -40,6 +40,18 @@ main {
           margin-bottom: 1%; }
         main > div section .question .meta-data .question-tags {
           float: right; }
+      main > div section .question .tags {
+        display: block;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        margin-top: 1.5%;
+        padding-top: 1%; }
+        main > div section .question .tags a {
+          font-size: 1.5rem;
+          color: black;
+          display: inline-block;
+          margin-right: 1.5%; }
+          main > div section .question .tags a:hover {
+            color: #ffffff; }
     main > div section .answer {
       background-color: aliceblue;
       padding: 2%;

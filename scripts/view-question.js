@@ -59,6 +59,7 @@
                     .text(question.content)
                     .addClass('content')));
 
+        getTagsInformationForQuestion();
         loadAnswers();
     }
 
@@ -69,6 +70,46 @@
             url: 'https://api.parse.com/1/classes/Answer?order=createdAt&where={"question":' + JSON.stringify(currentQuestionObj) + '}',
             success: answersLoaded
         });
+    }
+
+    // Functions for loading tags
+    function getTagsInformationForQuestion() {
+        var currentQuestionObj = {'__type': 'Pointer', 'className': 'Question', 'objectId': CURRENT_QUESTION_ID};
+        $.ajax({
+            method: 'GET',
+            url: 'https://api.parse.com/1/classes/QuestionsByTags?where={"question":' + JSON.stringify(currentQuestionObj) + '}',
+            success: getTagsIds
+        });
+    }
+
+    function getTagsIds(data) {
+        var tagsIds = [];
+        data.results.forEach(function (tag) {
+            tagsIds.push(tag.tag.objectId);
+        });
+        loadTags(tagsIds);
+    }
+
+    function loadTags(tagsIds) {
+        var tagsFilter = {"$in": tagsIds};
+        $.ajax({
+            method: 'GET',
+            url: 'https://api.parse.com/1/classes/Tag?order=name&where={"objectId":' + JSON.stringify(tagsFilter) + '}',
+            success: visualizeTags
+        });
+    }
+
+    function visualizeTags(data) {
+        var tags = data.results;
+        var $tagsSpan = $('<span class="tags">').text('Tags: ');
+        var $link;
+
+        tags.forEach(function (tag) {
+            $link = $('<a>').text(tag.name).attr('href', '#');
+            $tagsSpan.append($link);
+        });
+
+        $('.question').append('', $tagsSpan);
     }
 
     function answersLoaded(data) {
@@ -136,7 +177,6 @@
             $newAnswer.slideUp();
             $newAnswer.attr('data-is-hidden', 'true');
         }
-
     }
 
     function convertDate(date) {

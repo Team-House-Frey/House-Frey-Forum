@@ -9,7 +9,7 @@ html {
   width: 100%; }
   html body {
     background-color: #55728b;
-    font: normal 11px "Open Sans", tahoma, helvetica, arial, sans-serif;
+    font: normal 11px "Open Sans",tahoma,helvetica,arial,sans-serif;
     position: relative;
     zoom: 1;
     background-image: url("../images/shattered.png"); }

@@ -52,6 +52,21 @@ main {
             float: right;
           }
         }
+        .tags{
+          display: block;
+          border-top: 1px solid rgba(255, 255, 255, 0.5);
+          margin-top: 1.5%;
+          padding-top: 1%;
+          a{
+            font-size: 1.5rem;
+            color: black;
+            display: inline-block;
+            margin-right: 1.5%;
+            &:hover{
+              color: #ffffff;
+            }
+          }
+        }
       }
       .answer {
         background-color: aliceblue;
