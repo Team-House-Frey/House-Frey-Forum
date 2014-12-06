@@ -1,23 +1,5 @@
-String.prototype.capitalize = function capitlize() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-};
-
 (function () {
-    var HEADERS = {
-        'X-Parse-Application-Id': 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
-        'X-Parse-REST-API-Key': 'VAkyH0zeF83ZB5BHHdRs7iLXFtmOBRZqj2J5kQBF'
-    };
-
-    $.ajaxSetup({
-        headers: HEADERS,
-        error: ajaxError
-    });
-
     $(function () {
-        $('#header').load('includes/header.html', function () {
-            $.getScript('scripts/login.js');
-        });
-
         if (localStorage['session']) {
             location.href = 'index.html';
         }
@@ -63,18 +45,18 @@ String.prototype.capitalize = function capitlize() {
             success: registrationSuccessful,
             error: function (error) {
                 var errorResponse = JSON.parse(error.responseText);
-                createMessegeBox('#dialog-message', errorResponse.error.capitalize());
+                createMessageBox('#dialog-message', errorResponse.error);
             }
         });
     }
 
-    function createMessegeBox(selector, message) {
+    function createMessageBox(selector, message) {
         $(selector).text(message).dialog({
             modal: true,
             autoOpen: false,
             buttons: {
                 Ok: function() {
-                    $( this ).dialog( "close" );
+                    $(this).dialog( "close" );
                 }
             }
         }).dialog('open');
@@ -85,10 +67,5 @@ String.prototype.capitalize = function capitlize() {
         $('#registrationForm')
             .append('', '<div class="successful-registration">Registration successful. You may log in now.</div>');
         $('.successful-registration').animate({opacity: 1}, 1500);
-
-    }
-
-    function ajaxError() {
-        alert('Ajax Error');
     }
 })();

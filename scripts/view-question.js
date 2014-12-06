@@ -1,23 +1,9 @@
 (function () {
-    var CURRENT_QUESTION_ID = getUrlParameter('questionId'),
-        HEADERS = {
-            'X-Parse-Application-Id': 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
-            'X-Parse-REST-API-Key': 'VAkyH0zeF83ZB5BHHdRs7iLXFtmOBRZqj2J5kQBF'
-        };
-
-    $.ajaxSetup({
-        headers: HEADERS,
-        error: ajaxError
-    });
+    var CURRENT_QUESTION_ID = getUrlParameter('questionId');
 
     $(function () {
-        $('#header').load('includes/header.html', function () {
-            $.getScript('scripts/login.js');
-        });
-        $.getScript('scripts/common.js', function () {
-            loadCategories();
-        });
-        loadQuestion();
+        common.loadCategories();
+        loadCurrentQuestion();
         $('#user-name').val(localStorage['username']);
         $('#user-email').val(localStorage['email']);
         $('#toggle-reply-btn').click(toggleReplyArea);
@@ -25,7 +11,7 @@
         $('#new-answer').hide();
     });
 
-    function loadQuestion() {
+    function loadCurrentQuestion() {
         $.ajax({
             method: 'GET',
             url: 'https://api.parse.com/1/classes/Question?where={"objectId":"' + CURRENT_QUESTION_ID + '"}',
@@ -72,6 +58,21 @@
         });
     }
 
+    function answersLoaded(data) {
+        data.results.forEach(function(answer) {
+            $('#main-content')
+                .append($('<article>')
+                    .addClass('answer')
+                    .append($('<div>')
+                        .html('Replied on <span class="date">' + convertDate(answer.createdAt) +
+                        '</span> by <span class="nickname">' + answer.user_name + '<span>')
+                        .addClass('meta-data'))
+                    .append($('<div>')
+                        .text(answer.content)
+                        .addClass('content')));
+        });
+    }
+
     // Functions for loading tags
     function getTagsInformationForQuestion() {
         var currentQuestionObj = {'__type': 'Pointer', 'className': 'Question', 'objectId': CURRENT_QUESTION_ID};
@@ -91,7 +92,7 @@
     }
 
     function loadTags(tagsIds) {
-        var tagsFilter = {"$in": tagsIds};
+        var tagsFilter = {'$in': tagsIds};
         $.ajax({
             method: 'GET',
             url: 'https://api.parse.com/1/classes/Tag?order=name&where={"objectId":' + JSON.stringify(tagsFilter) + '}',
@@ -100,54 +101,20 @@
     }
 
     function visualizeTags(data) {
-        var tags = data.results;
         var $tagsSpan = $('<span class="tags">').text('Tags: ');
-        var $link;
 
-        tags.forEach(function (tag) {
-            $link = $('<a>').text(tag.name).attr('href', '#');
+        data.results.forEach(function (tag) {
+            var $link = $('<a>').text(tag.name).attr('href', '#');
             $tagsSpan.append($link);
         });
 
         $('.question').append('', $tagsSpan);
     }
 
-    function answersLoaded(data) {
-        data.results.forEach(function(answer) {
-            $('#main-content')
-                .append($('<article>')
-                    .addClass('answer')
-                    .append($('<div>')
-                        .html('Replied on <span class="date">' + convertDate(answer.createdAt) +
-                        '</span> by <span class="nickname">' + answer.user_name + '<span>')
-                        .addClass('meta-data'))
-                    .append($('<div>')
-                        .text(answer.content)
-                        .addClass('content')));
-        });
-    }
-
     function addAnswer() {
         var user_name = $('#user-name').val(),
             email = $('#user-email').val(),
             content = $('#answer-content').val();
-
-        if (localStorage['session']) {
-            HEADERS['X-Parse-Session-Token'] = localStorage['session'];
-
-            $.ajax({
-                method: 'PUT',
-                url: 'https://api.parse.com/1/classes/_User/' + localStorage['userId'],
-                data: '{"activity":{"__op":"Increment","amount":1}}',
-                contentType: 'application/json',
-                success: activityUpdated,
-                error: activityUpdated
-            });
-
-            function activityUpdated(data) {
-                localStorage['activity'] = data.activity || localStorage['activity'] + 1;
-            }
-        }
 
         $.ajax({
             method: 'POST',
@@ -160,16 +127,30 @@
                 'question': {'__type': 'Pointer', 'className': 'Question', 'objectId': CURRENT_QUESTION_ID}
             }),
             contentType: 'application/json',
-            success: loadQuestion
+            success: updateActivity
         });
-    }
 
-    function ajaxError() {
-        alert('Ajax Error');
+        function updateActivity() {
+            if (localStorage['session']) {
+                var headersWithToken = JSON.parse(JSON.stringify(common.headers));
+                headersWithToken['X-Parse-Session-Token'] = localStorage['session'];
+                $.ajax({
+                    method: 'PUT',
+                    headers: headersWithToken,
+                    url: 'https://api.parse.com/1/classes/_User/' + localStorage['userId'],
+                    data: '{"activity":{"__op":"Increment","amount":1}}',
+                    contentType: 'application/json',
+                    success: loadCurrentQuestion,
+                    error: loadCurrentQuestion
+                });
+            } else {
+                loadCurrentQuestion();
+            }
+        }
     }
 
     function toggleReplyArea() {
-        var  $newAnswer = $('#new-answer');
+        var $newAnswer = $('#new-answer');
         if ($newAnswer.attr('data-is-hidden') === 'true') {
             $newAnswer.slideDown();
             $newAnswer.attr('data-is-hidden', 'false');
