@@ -141,3 +141,31 @@ html {
           width: 173px;
           float: left;
           padding: 3px; }
+
+        #page-navigation {
+          margin: 10px 0;
+        }
+#page-navigation a {
+  margin: 0 2px;
+  padding: 5px 10px;
+  font-size: 1.8em;
+  background-color: #444444;
+  border: 1px solid orange;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+#page-navigation a:hover {
+  border: 1px solid orange;
+  color: orange;
+}
+
+#page-navigation .active-page {
+  background-color: orange;
+  color: black;
+}
+
+#page-navigation .active-page:hover {
+  color: #ffffff;
+}
