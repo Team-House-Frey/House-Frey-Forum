@@ -1,7 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: 0; }
+  padding: 0; }
 
 main {
   width: 70%;
@@ -12,7 +11,8 @@ main {
   padding: 2%;
   border-radius: 3px; }
   main h1 {
-    color: #323232; }
+    color: #323232;
+    margin-bottom: 5%; }
   main .registration-form {
     text-align: center;
     margin: 5% auto;
@@ -34,7 +34,11 @@ main {
         main .registration-form div input:focus, main .registration-form div input:active {
           outline: none; }
       main .registration-form div label {
-        float: left; }
+        float: left;
+        min-width: 120px;
+        text-align: left; }
+      main .registration-form div label.error {
+        color: #E95031; }
       main .registration-form div:after {
         content: ".";
         visibility: hidden;
@@ -51,6 +55,7 @@ main {
         height: 0;
         clear: both; }
     main .registration-form button {
+      cursor: pointer;
       margin: 2% auto;
       width: 20%;
       height: 35px;

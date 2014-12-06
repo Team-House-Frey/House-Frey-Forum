@@ -1,11 +1,18 @@
 (function () {
     $(function () {
+        var newQuestion = $('#new-question');
+
         if(!localStorage['session']) {
-            $('#new-question').html('<article>Please login or <a href="registration.html">register</a> in order to add a question.</article>');
+            newQuestion.html('<article>Please login or <a href="registration.html">register</a> in order to add a question.</article>');
             return;
         }
 
-        $('#add-question-btn').click(addQuestion)
+        newQuestion.validate();
+        $('#add-question-btn').click(function () {
+            if(newQuestion.valid()) {
+                addQuestion();
+            }
+        });
     });
 
     function addQuestion() {
@@ -45,8 +52,7 @@
             error: redirectToQuestion
         });
 
-        function redirectToQuestion(data) {
-            localStorage['activity'] = data.activity || localStorage['activity'] + 1;
+        function redirectToQuestion() {
             location.href = 'viewQuestion.html?questionId=' + question.objectId;
         }
     }

@@ -42,6 +42,9 @@ main {
       label{
         vertical-align: top;
       }
+      label.error {
+        color: #E95031;
+      }
     }
     input, select, textarea{
       height: 35px;

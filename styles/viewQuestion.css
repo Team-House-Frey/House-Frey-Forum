@@ -105,14 +105,14 @@ main {
         main > div .new-answer-wrapper > div #toggle-reply-btn {
           cursor: pointer;
           width: 20%; }
-      main > div .new-answer-wrapper > section {
+      main > div .new-answer-wrapper > #new-answer {
         margin: 0 auto;
         text-align: center; }
-        main > div .new-answer-wrapper > section #save-reply-btn {
+        main > div .new-answer-wrapper > #new-answer #save-reply-btn {
           cursor: pointer;
           width: 35%;
           margin-top: 2%; }
-        main > div .new-answer-wrapper > section textarea {
+        main > div .new-answer-wrapper > #new-answer textarea {
           display: block;
           margin: 2% auto;
           width: 400px;

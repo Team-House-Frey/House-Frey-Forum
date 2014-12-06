@@ -14,17 +14,17 @@
     <header id="header"></header>
     <main>
         <h1>Ask a question</h1>
-        <section id="new-question">
+        <form id="new-question">
             <div>
-                <label for="question-title">Title</label>
-                <input type="text" id="question-title" placeholder="Enter your question title here"/>
+                <label for="question-title">Title: </label>
+                <input type="text" id="question-title" name="question-title" placeholder="Enter your question title here" required minlength="5"/>
             </div>
             <div>
-                <label for="question-content">Description</label>
-                <textarea id="question-content" placeholder="Enter your question content here"></textarea>
+                <label for="question-content">Description: </label>
+                <textarea id="question-content" name="question-content" placeholder="Enter your question content here" required minlength="15"></textarea>
             </div>
             <div>
-                <label for="question-category">Category:</label>
+                <label for="question-category">Category: </label>
                 <select id="question-category">
                     <option value="frEJN1n0mm" selected>Drinking</option>
                     <option value="E48TlVHigt">Sports</option>
@@ -33,11 +33,11 @@
                 </select>
             </div>
             <div>
-                <label for="question-tags">Tags</label>
+                <label for="question-tags">Tags: </label>
                 <input type="text" id="question-tags" placeholder="Enter your question tags here (comma separated)"/>
             </div>
             <button type="button" id="add-question-btn">Ask</button>
-        </section>
+        </form>
     </main>
 </body>
 </html>

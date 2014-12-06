@@ -32,6 +32,8 @@ main {
         clear: both; }
       main #new-question > div label {
         vertical-align: top; }
+      main #new-question > div label.error {
+        color: #E95031; }
     main #new-question input, main #new-question select, main #new-question textarea {
       height: 35px;
       width: 75%;

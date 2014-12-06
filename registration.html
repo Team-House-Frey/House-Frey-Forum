@@ -5,9 +5,8 @@
     <title>Registration</title>
     <link rel="stylesheet" href="styles/header.css"/>
     <link rel="stylesheet" href="styles/registration.css"/>
-    <link rel="stylesheet" href="styles/jquery-ui.min.css"/>
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-noty/2.2.2/packaged/jquery.noty.packaged.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="scripts/common.js"></script>
     <script src="scripts/registration.js" async></script>
@@ -16,32 +15,32 @@
     <header id="header"></header>
     <main>
         <h1>Register a new user</h1>
+        <div id="dialog-message" title="Registration error"></div>
         <form id="registrationForm" class="registration-form">
             <div class="user-data-wrapper">
                 <div>
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" placeholder="First name..." minlength="3">
+                    <label for="firstName">First Name: </label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="First name..." minlength="3">
                 </div>
                 <div>
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" placeholder="Last name..." minlength="3">
+                    <label for="lastName">Last Name: </label>
+                    <input type="text" id="lastName" name="lastName" required placeholder="Last name..." minlength="3">
                 </div>
                 <div>
                     <label for="username">Username: </label>
-                    <input type="text" id="username" name="username" required="true" placeholder="Username..." minlength="3">
+                    <input type="text" id="username" name="username" required placeholder="Username..." minlength="3">
                 </div>
                 <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required="true" placeholder="Password..." minlength="6">
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" name="password" required placeholder="Password..." minlength="5">
                 </div>
                 <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Email...">
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" required placeholder="Email...">
                 </div>
             </div>
             <button type="button" id="submit" class="submit-button-disabled">Register</button>
         </form>
-        <div id="dialog-message" title="Registration error"></div>
     </main>
 </body>
 </html>

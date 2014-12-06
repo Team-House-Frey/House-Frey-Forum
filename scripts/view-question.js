@@ -4,11 +4,16 @@
     $(function () {
         common.loadCategories();
         loadCurrentQuestion();
+        $('#toggle-reply-btn').click(toggleReplyArea);
         $('#user-name').val(localStorage['username']);
         $('#user-email').val(localStorage['email']);
-        $('#toggle-reply-btn').click(toggleReplyArea);
-        $('#save-reply-btn').click(addAnswer);
-        $('#new-answer').hide();
+        var newAnswer = $('#new-answer').hide();
+        newAnswer.validate();
+        $('#save-reply-btn').click(function () {
+            if(newAnswer.valid()) {
+                addAnswer();
+            }
+        });
     });
 
     function loadCurrentQuestion() {
