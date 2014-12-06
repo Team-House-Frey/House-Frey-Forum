@@ -105,6 +105,34 @@ var common = (function () {
         var $questionsDiv = $('#main-content').empty();
         $('#new-answer-wrapper').empty();
         $questionsDiv.append('', $('<h1> Последни въпроси </h1>'));
+
+
+        var questionsPerPage = 10,
+            totalQuestions = data.results.length,
+            currentLink = 0,
+            numberOfPages = Math.ceil(totalQuestions / questionsPerPage),
+            nextLink = '<a class="next-link" href="#">Next</a>',
+            prevLink = '<a class="previous-link" href="#">Prev</a>',
+            navigationHTML = prevLink,
+            $pageNav = $('<div id="page-navigation">'),
+            currentPageIndex = 0;
+
+        $questionsDiv.on('click', '.previous-link', previous);
+        $questionsDiv.on('click', '.next-link', next);
+        $questionsDiv.on('click', '.page-link', goToThisPage);
+
+        while (numberOfPages > currentLink) {
+            navigationHTML += '<a class="page-link" href="#" id="'
+            + currentLink + '">'
+            + (currentLink + 1) + '</a>';
+
+            currentLink++;
+        }
+
+        navigationHTML += nextLink;
+        $pageNav.html(navigationHTML);
+
+
         data.results.forEach(function(question) {
             var $question = $('<article>'),
                 $questionTitle = $('<a>'),
@@ -123,8 +151,46 @@ var common = (function () {
                 .addClass('meta-data');
             $question.append($questionDetails);
 
-            $questionsDiv.append($question);
+            $questionsDiv.append($question.css('display', 'none'));
         });
+
+        $questionsDiv.children('article').slice(0, questionsPerPage).css('display', 'block');
+        $questionsDiv.append($pageNav);
+        $('#page-navigation .page-link:first').addClass('active-page');
+
+        function previous() {
+            var newPage = currentPageIndex - 1;
+            // var p = $('.active-page').prev('.page-link').length;
+
+            if (newPage >= 0) {
+                goToPage(newPage);
+            }
+        }
+
+        function next() {
+            var newPage = currentPageIndex + 1;
+            var p = $('.active-page').next('.page-link').length;
+
+            if (p > 0) {
+                goToPage(newPage);
+            }
+        }
+
+        function goToThisPage(e) {
+            var pageNum = $(e.target).attr('id');
+            goToPage(parseInt(pageNum));
+        }
+
+        function goToPage(pageNum) {
+            var start = questionsPerPage * pageNum,
+                end = start + questionsPerPage;
+
+            $('#main-content').children('article').css('display', 'none').slice(start, end).css('display', 'block');
+            $('#' + pageNum + '').addClass('active-page');
+            $('#' + (pageNum - 1) + '').removeClass('active-page');
+            currentPageIndex = pageNum;
+
+        }
     }
 
     function convertDate(date) {
