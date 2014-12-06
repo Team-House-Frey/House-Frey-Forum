@@ -57,8 +57,8 @@
                     } else {
                         addExistingTagToQuestion(question, databaseTagsMatches[tagName]);
                     }
-                    processRedirectionToQuestion(question);
-                })
+                });
+                processRedirectionToQuestion(question);
             }
         });
     }
