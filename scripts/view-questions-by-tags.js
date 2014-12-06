@@ -2,7 +2,7 @@ $(function () {
     var tagFilter = getUrlParameter('tag');
 
     common.loadCategories();
-    getQuestionsInformationForTag();
+    getQuestionsInformationForTag(tagFilter);
 
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1);
@@ -15,7 +15,7 @@ $(function () {
         }
     }
 
-    function getQuestionsInformationForTag() {
+    function getQuestionsInformationForTag(tagFilter) {
         var currentTagObj = {'__type': 'Pointer', 'className': 'Tag', 'objectId': tagFilter};
         $.ajax({
             method: 'GET',
