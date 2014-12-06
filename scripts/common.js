@@ -186,8 +186,8 @@ var common = (function () {
                 end = start + questionsPerPage;
 
             $('#main-content').children('article').css('display', 'none').slice(start, end).css('display', 'block');
+            $('.active-page').removeClass('active-page');
             $('#' + pageNum + '').addClass('active-page');
-            $('#' + (pageNum - 1) + '').removeClass('active-page');
             currentPageIndex = pageNum;
 
         }
