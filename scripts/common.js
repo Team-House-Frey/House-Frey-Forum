@@ -143,6 +143,7 @@ var common = (function () {
         headers: headers,
         convertDate: convertDate,
         loadCategories: loadCategories,
-        loadQuestions: loadQuestions
+        loadQuestions: loadQuestions,
+        visualizeQuestions: questionsLoaded
     }
 })();

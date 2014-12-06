@@ -43,8 +43,7 @@
                 .addClass('question')
                 .append($('<div>')
                     .html('Asked on <span class="date">' + common.convertDate(question.createdAt) +
-                        '</span> by <span class="nickname">' + question.user_name + '</span>' +
-                        '<span class="question-tags">Tags: ' + question.tags  + '</span>')
+                        '</span> by <span class="nickname">' + question.user_name + '</span>')
                     .addClass('meta-data'))
                 .append($('<div>')
                     .text(question.content)
@@ -109,7 +108,8 @@
         var $tagsSpan = $('<span class="tags">').text('Tags: ');
 
         data.results.forEach(function (tag) {
-            var $link = $('<a>').text(tag.name).attr('href', '#');
+            var $link = $('<a>').text(tag.name)
+                .attr('href', 'viewQuestionsByTag.html?tag=' + tag.objectId);
             $tagsSpan.append($link);
         });
 

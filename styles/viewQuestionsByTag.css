@@ -1,0 +1,39 @@
+main {
+  background-color: slategray;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2%; }
+  main section {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 2%;
+    width: 70%; }
+    main section h1 {
+      padding: 1%;
+      height: 7%;
+      font-size: 2rem;
+      color: aliceblue;
+      background-color: #e95031;
+      font-weight: normal;
+      border-bottom: 3px solid orange; }
+    main section article {
+      height: 30%;
+      padding: 1% 2% 2% 2%;
+      border-bottom: 1px groove orange;
+      background-color: darkgray;
+      width: 100%; }
+      main section article a {
+        font-size: 1.8rem;
+        color: whitesmoke;
+        text-decoration: none; }
+        main section article a:hover {
+          color: #323232; }
+      main section article .meta-data {
+        font-size: 1.4rem;
+        margin-top: 1%; }
+        main section article .meta-data .nickname {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 1%; }
+        main section article .meta-data .question-visits {
+          float: right; }

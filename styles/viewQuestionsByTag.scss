@@ -1,0 +1,53 @@
+$customRed: #e95031;
+$background: slategray;
+$groveOrange: groove orange;
+$customBlack: rgb(50, 50, 50);
+
+main {
+  background-color: $background;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2%;
+  section {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 2%;
+    width: 70%;
+    h1 {
+      padding: 1%;
+      height: 7%;
+      font-size: 2rem;
+      color: aliceblue;
+      background-color: $customRed;
+      font-weight: normal;
+      border-bottom: 3px solid orange;
+    }
+    article {
+      height: 30%;
+      padding: 1% 2% 2% 2%;
+      border-bottom: 1px groove orange;
+      background-color: darkgray;
+      width: 100%;
+      a {
+        font-size: 1.8rem;
+        color: whitesmoke;
+        text-decoration: none;
+        &:hover{
+          color: $customBlack;
+        }
+      }
+      .meta-data {
+        font-size: 1.4rem;
+        margin-top: 1%;
+        .nickname {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 1%;
+        }
+        .question-visits {
+          float: right;
+        }
+      }
+    }
+  }
+}

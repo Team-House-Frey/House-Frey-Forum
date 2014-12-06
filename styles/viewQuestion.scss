@@ -142,6 +142,13 @@ main {
           width: 35%;
           margin-top: 2%;
         }
+        label.error {
+          color: red;
+          display: block;
+          margin-top: 5%;
+          text-align: center;
+          font-size: 2.2rem;
+        }
         textarea {
           display: block;
           margin: 2% auto;
