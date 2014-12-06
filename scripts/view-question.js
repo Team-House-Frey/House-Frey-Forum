@@ -42,7 +42,7 @@
             .append($('<article>')
                 .addClass('question')
                 .append($('<div>')
-                    .html('Asked on <span class="date">' + convertDate(question.createdAt) +
+                    .html('Asked on <span class="date">' + common.convertDate(question.createdAt) +
                         '</span> by <span class="nickname">' + question.user_name + '</span>' +
                         '<span class="question-tags">Tags: ' + question.tags  + '</span>')
                     .addClass('meta-data'))
@@ -69,7 +69,7 @@
                 .append($('<article>')
                     .addClass('answer')
                     .append($('<div>')
-                        .html('Replied on <span class="date">' + convertDate(answer.createdAt) +
+                        .html('Replied on <span class="date">' + common.convertDate(answer.createdAt) +
                         '</span> by <span class="nickname">' + answer.user_name + '<span>')
                         .addClass('meta-data'))
                     .append($('<div>')
@@ -163,18 +163,6 @@
             $newAnswer.slideUp();
             $newAnswer.attr('data-is-hidden', 'true');
         }
-    }
-
-    function convertDate(date) {
-        var dateTokens = date.substring(0, 10).split('-'),
-            timeTokens = date.substring(11, 19).split(':'),
-            fullHours = (Number(timeTokens[0]) + 2);
-        if (fullHours >= 24) {
-            fullHours -= 24;
-        }
-
-        return dateTokens[2] + '-' + dateTokens[1] + '-' + dateTokens[0] + ' at ' +
-            fullHours + ':' + timeTokens[1] + ':' + timeTokens[2];
     }
 
     function getUrlParameter(sParam) {

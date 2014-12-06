@@ -105,7 +105,6 @@ var common = (function () {
         var $questionsDiv = $('#main-content').empty();
         $('#new-answer-wrapper').empty();
         $questionsDiv.append('', $('<h1> Последни въпроси </h1>'));
-
         data.results.forEach(function(question) {
             var $question = $('<article>'),
                 $questionTitle = $('<a>'),
@@ -126,22 +125,23 @@ var common = (function () {
 
             $questionsDiv.append($question);
         });
+    }
 
-        function convertDate(date) {
-            var dateTokens = date.substring(0, 10).split('-'),
-                timeTokens = date.substring(11, 19).split(':'),
-                fullHours = (Number(timeTokens[0]) + 2);
-            if (fullHours >= 24) {
-                fullHours -= 24;
-            }
-
-            return dateTokens[2] + '-' + dateTokens[1] + '-' + dateTokens[0] + ' at ' +
-                fullHours + ':' + timeTokens[1] + ':' + timeTokens[2];
+    function convertDate(date) {
+        var dateTokens = date.substring(0, 10).split('-'),
+            timeTokens = date.substring(11, 19).split(':'),
+            fullHours = (Number(timeTokens[0]) + 2);
+        if (fullHours >= 24) {
+            fullHours -= 24;
         }
+
+        return dateTokens[2] + '-' + dateTokens[1] + '-' + dateTokens[0] + ' at ' +
+            fullHours + ':' + timeTokens[1] + ':' + timeTokens[2];
     }
 
     return {
         headers: headers,
+        convertDate: convertDate,
         loadCategories: loadCategories,
         loadQuestions: loadQuestions
     }
