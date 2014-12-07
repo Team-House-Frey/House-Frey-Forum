@@ -77,6 +77,7 @@ var common = (function ($) {
 
     function categoriesLoaded(data) {
         var categoryList = $('#categories').append($('<li>')
+            .addClass('selected-category')
             .append($('<a>')
                 .attr('href', '#')
                 .text('All Categories')
@@ -93,7 +94,7 @@ var common = (function ($) {
     }
 
     function loadQuestions() {
-        $('#categories').children('li').removeAttr('class');
+        $('#categories').children('li').removeClass();
         $(this).parent().addClass('selected-category');
 
         var category = $(this).data('category'),
@@ -236,7 +237,7 @@ var common = (function ($) {
             }
         })*/;
 
-        $titleSelector = $('#main-content article a');
+        var $titleSelector = $('#main-content article a');
         // $contentSelector = $('#main-content article .nickname');
         display($titleSelector);
         // display($contentSelector);
@@ -246,8 +247,8 @@ var common = (function ($) {
                 var $text = $(this).text();
 
                 if($text.indexOf(str) > -1) {
-                    $(this).parent().show();
-                    // $(this).parent('article').show();
+                    //$(this).parent().show();
+                    $(this).parent('article').show();
                 }
             });
         }

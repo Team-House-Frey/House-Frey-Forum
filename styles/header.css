@@ -9,7 +9,7 @@ html {
   width: 100%; }
   html body {
     background-color: #55728b;
-    font: normal 11px "Open Sans",tahoma,helvetica,arial,sans-serif;
+    font: normal 11px "Open Sans", tahoma, helvetica, arial, sans-serif;
     position: relative;
     zoom: 1;
     background-image: url("../images/shattered.png"); }
@@ -76,7 +76,9 @@ html {
               html body header .sub-container #login-container form input[type='button'] {
                 width: 20%;
                 margin-left: 1%;
-                cursor: pointer; }
+                cursor: pointer;
+                background: #323232;
+                color: #FFF; }
         html body header .sub-container #logged-in-container {
           width: 60%;
           color: #ffffff;
@@ -138,9 +140,6 @@ html {
             box-shadow: none;
             -moz-box-shadow: none;
             -webkit-shadow: none; }
-          html body header .sub-container #search-button:hover {
-            background-color: #464646;
-            cursor: pointer; }
         html body header .sub-container #search {
           display: inline;
           width: 45%; }

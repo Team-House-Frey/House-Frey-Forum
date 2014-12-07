@@ -90,6 +90,8 @@ html {
                 width: 20%;
                 margin-left: 1%;
                 cursor: pointer;
+                background: $customBlack;
+                color: #FFF;
               }
             }
           }
@@ -169,10 +171,6 @@ html {
             box-shadow: none;
             -moz-box-shadow: none;
             -webkit-shadow: none;
-          }
-          &:hover {
-            background-color: #464646;
-            cursor: pointer;
           }
         }
         #search {
