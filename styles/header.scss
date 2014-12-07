@@ -50,6 +50,9 @@ html {
         height: 100%;
         background-color: #323232;
         padding: 2%;
+        &:hover{
+          background-color: rgb(70, 70, 70);
+        }
       }
       ol li a, ul li a {
         display: block;
@@ -191,19 +194,17 @@ html {
           margin: 0 2px;
           padding: 5px 10px;
           font-size: 1.8em;
-          background-color: $customBlack;
-          border: 1px solid $customRed;
-          color: $customRed;
+          background-color: rgb(50, 50, 50);
+          color: #ffffff;
           text-decoration: none;
           border-radius: 2px;
           &:hover {
-            border: 1px solid orange;
-            color: orange;
+            color: $customRed;
           }
         }
         .active-page {
-          background-color: orange;
-          color: black;
+          background-color: $customRed;
+          color: $customBlack;
           &:hover {
             color: #ffffff;
           }
