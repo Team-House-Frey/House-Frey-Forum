@@ -16,8 +16,12 @@
                     'email': $('#email').val(),
                     'activity': 0
                 };
-
                 registerUser(registrationData);
+            }
+        });
+        $('.user-data-wrapper').keyup(function (e) {
+            if (e.keyCode == 13) {
+                $('#submit').click();
             }
         });
     });
