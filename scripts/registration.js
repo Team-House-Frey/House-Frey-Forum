@@ -1,4 +1,4 @@
-(function () {
+(function ($) {
     $(function () {
         if (localStorage['session']) {
             location.href = 'index.html';
@@ -8,23 +8,25 @@
         form.validate();
         $('#submit').click(function () {
             if(form.valid()) {
-                registerUser();
+                var registrationData = {
+                    'username': $('#username').val(),
+                    'password': $('#password').val(),
+                    'firstName': $('#firstName').val(),
+                    'lastName': $('#lastName').val(),
+                    'email': $('#email').val(),
+                    'activity': 0
+                };
+
+                registerUser(registrationData);
             }
         });
     });
 
-    function registerUser() {
+    function registerUser(registrationData) {
         $.ajax({
             method: 'POST',
             url: 'https://api.parse.com/1/classes/_User',
-            data: JSON.stringify({
-                'username': $('#username').val(),
-                'password': $('#password').val(),
-                'firstName': $('#firstName').val(),
-                'lastName': $('#lastName').val(),
-                'email': $('#email').val(),
-                'activity': 0
-            }),
+            data: JSON.stringify(registrationData),
             contentType: 'application/json',
             success: registrationSuccessful,
             error: registrationError
@@ -46,4 +48,4 @@
             killer: true
         });
     }
-})();
+})(jQuery);
