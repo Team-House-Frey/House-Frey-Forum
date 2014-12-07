@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="styles/categoriesSidebar.css"/>
     <script src="http://code.jquery.com/jquery-2.1.1.min.js" defer></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js" defer></script>
-    <script src="scripts/common.js"defer></script>
-    <script src="scripts/view-question.js" async></script>
+    <script src="scripts/common.js" defer></script>
+    <script src="scripts/view-question.js" defer></script>
 </head>
 <body>
     <header id="header"></header>
@@ -26,7 +26,7 @@
                 <form id="new-answer" data-is-hidden="true">
                     <input type="text" id="user-name" name="user-name" placeholder="Please enter your name" minlength="3" required>
                     <input type="email" id="user-email" name="user-email" placeholder="Please enter your email" required>
-                    <textarea id="answer-content" name="answer-content" placeholder="Enter your reply here..." minlength="10" required></textarea>
+                    <textarea id="answer-content" name="answer-content" placeholder="Enter your reply here..." minlength="6" required></textarea>
                     <button type="button" id="save-reply-btn">Add Reply</button>
                 </form>
             </div>

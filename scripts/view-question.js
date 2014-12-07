@@ -51,6 +51,7 @@
 
         getTagsInformationForQuestion();
         loadAnswers();
+        $('#answer-content').val('');
     }
 
     function loadAnswers() {
@@ -77,7 +78,6 @@
         });
     }
 
-    // Functions for loading tags
     function getTagsInformationForQuestion() {
         var currentQuestionObj = {'__type': 'Pointer', 'className': 'Question', 'objectId': CURRENT_QUESTION_ID};
         $.ajax({

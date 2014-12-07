@@ -1,4 +1,4 @@
-var common = (function () {
+var common = (function ($) {
     var headers = {
         'X-Parse-Application-Id': 'q8K93DShEidGUj4LnNjUtdc0ifunrQLgC6J1F6h3',
         'X-Parse-REST-API-Key': 'VAkyH0zeF83ZB5BHHdRs7iLXFtmOBRZqj2J5kQBF'
@@ -106,7 +106,6 @@ var common = (function () {
         $('#new-answer-wrapper').empty();
         $questionsDiv.append('', $('<h1> Последни въпроси </h1>'));
 
-
         var questionsPerPage = 10,
             totalQuestions = data.results.length,
             currentLink = 0,
@@ -156,7 +155,7 @@ var common = (function () {
 
         $questionsDiv.children('article').slice(0, questionsPerPage).css('display', 'block');
         $questionsDiv.append($pageNav);
-        $('#page-navigation .page-link:first').addClass('active-page');
+        $('.page-link').first().addClass('active-page');
 
         function previous() {
             var newPage = currentPageIndex - 1;
@@ -210,4 +209,4 @@ var common = (function () {
         loadQuestions: loadQuestions,
         visualizeQuestions: questionsLoaded
     }
-})();
+})(jQuery);
