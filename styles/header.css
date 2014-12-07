@@ -9,7 +9,7 @@ html {
   width: 100%; }
   html body {
     background-color: #55728b;
-    font: normal 11px "Open Sans",tahoma,helvetica,arial,sans-serif;
+    font: normal 11px "Open Sans", tahoma, helvetica, arial, sans-serif;
     position: relative;
     zoom: 1;
     background-image: url("../images/shattered.png"); }
@@ -141,31 +141,22 @@ html {
           width: 173px;
           float: left;
           padding: 3px; }
-
-        #page-navigation {
-          margin: 10px 0;
-        }
-#page-navigation a {
-  margin: 0 2px;
-  padding: 5px 10px;
-  font-size: 1.8em;
-  background-color: #444444;
-  border: 1px solid orange;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 2px;
-}
-
-#page-navigation a:hover {
-  border: 1px solid orange;
-  color: orange;
-}
-
-#page-navigation .active-page {
-  background-color: orange;
-  color: black;
-}
-
-#page-navigation .active-page:hover {
-  color: #ffffff;
-}
+    html body #main-content #page-navigation {
+      margin: 10px 0; }
+      html body #main-content #page-navigation a {
+        margin: 0 2px;
+        padding: 5px 10px;
+        font-size: 1.8em;
+        background-color: #444444;
+        border: 1px solid orange;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 2px; }
+        html body #main-content #page-navigation a:hover {
+          border: 1px solid orange;
+          color: orange; }
+      html body #main-content #page-navigation .active-page {
+        background-color: orange;
+        color: black; }
+        html body #main-content #page-navigation .active-page:hover {
+          color: #ffffff; }
