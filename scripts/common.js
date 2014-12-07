@@ -27,6 +27,7 @@ var common = (function ($) {
                     loginUser();
                 }
             });
+            $('#search-field').on("keyup", search);
         });
     });
 
@@ -222,6 +223,25 @@ var common = (function ($) {
                 return sParameterName[1];
             }
         }
+    }
+
+    function search() {
+        var $str = $(this).val();
+
+        if($str === '') {
+            loadQuestions();
+        }
+
+        $('#main-content article').hide();
+        $('#page-navigation').hide();
+
+        $('#main-content article a').each(function () {
+            var $text = $(this).text();
+
+            if($text.indexOf($str) > -1) {
+                $(this).parent().show();
+            }
+        });
     }
 
     return {
