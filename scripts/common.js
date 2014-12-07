@@ -20,6 +20,7 @@ var common = (function ($) {
                 $('#registration').parent().hide();
             }
 
+            $('#search-field').keyup(search);
             $('#submit-login').click(loginUser);
             $('#logout-btn').click(logoutUser);
             $('#login-username, #login-password').keyup(function (e) {
@@ -27,7 +28,6 @@ var common = (function ($) {
                     loginUser();
                 }
             });
-            $('#search-field').on("keyup", search);
         });
     });
 
@@ -77,6 +77,7 @@ var common = (function ($) {
 
     function categoriesLoaded(data) {
         var categoryList = $('#categories').append($('<li>')
+            .addClass('selected-category')
             .append($('<a>')
                 .attr('href', '#')
                 .text('All Categories')
@@ -93,11 +94,8 @@ var common = (function ($) {
     }
 
     function loadQuestions() {
-        // Next lines can be in another function as well
-        var $categoriesSideBar = $(this).parent().parent();
-        var $categories = $categoriesSideBar.find('li');
-        $categories.removeAttr('class');
-        $(this).parent().attr('class', 'selected-category');
+        $('#categories').children('li').removeAttr('class');
+        $(this).parent().addClass('selected-category');
 
         var category = $(this).data('category'),
             whereClause = '';
@@ -226,20 +224,16 @@ var common = (function ($) {
     }
 
     function search() {
-        var $str = $(this).val();
-
-        if($str === '') {
+        var str = $(this).val().toLowerCase();
+        if (!str) {
             loadQuestions();
         }
 
-        $('#main-content article').hide();
         $('#page-navigation').hide();
-
-        $('#main-content article a').each(function () {
-            var $text = $(this).text();
-
-            if($text.indexOf($str) > -1) {
-                $(this).parent().show();
+        $('#main-content').children('article').hide().each(function () {
+            var text = $(this).children('a').text().toLowerCase();
+            if (text.indexOf(str) > -1) {
+                $(this).show();
             }
         });
     }
