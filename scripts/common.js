@@ -237,10 +237,11 @@ var common = (function ($) {
             }
         })*/;
 
-        var $titleSelector = $('#main-content article a');
-        // $contentSelector = $('#main-content article .nickname');
+        var $titleSelector = $('#main-content article a'),
+            $contentSelector = $('#main-content article .nickname');
+
         display($titleSelector);
-        // display($contentSelector);
+        display($contentSelector);
 
         function display(selector) {
             selector.each(function () {
@@ -248,7 +249,7 @@ var common = (function ($) {
 
                 if($text.indexOf(str) > -1) {
                     //$(this).parent().show();
-                    $(this).parent('article').show();
+                    $(this).closest('article').show();
                 }
             });
         }
