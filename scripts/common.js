@@ -87,6 +87,12 @@ var common = (function ($) {
     }
 
     function loadQuestions() {
+        // Next lines can be in another function as well
+        var $categoriesSideBar = $(this).parent().parent();
+        var $categories = $categoriesSideBar.find('li');
+        $categories.removeAttr('class');
+        $(this).parent().attr('class', 'selected-category');
+
         var category = $(this).data('category'),
             whereClause = '';
 
