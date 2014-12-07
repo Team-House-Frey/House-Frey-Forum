@@ -1,4 +1,4 @@
-(function () {
+(function ($) {
     $(function () {
         var newQuestion = $('#new-question');
 
@@ -107,4 +107,4 @@
     function redirectToQuestion(question) {
             location.href = 'viewQuestion.html?questionId=' + question.objectId;
     }
-})();
+})(jQuery);

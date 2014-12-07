@@ -160,18 +160,16 @@ var common = (function () {
 
         function previous() {
             var newPage = currentPageIndex - 1;
-            // var p = $('.active-page').prev('.page-link').length;
 
-            if (newPage >= 0) {
+            if ($('.active-page').prev('.page-link').length) {
                 goToPage(newPage);
             }
         }
 
         function next() {
             var newPage = currentPageIndex + 1;
-            var p = $('.active-page').next('.page-link').length;
 
-            if (p > 0) {
+            if ($('.active-page').next('.page-link').length) {
                 goToPage(newPage);
             }
         }

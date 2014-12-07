@@ -1,4 +1,4 @@
-(function () {
+(function ($) {
     var CURRENT_QUESTION_ID = getUrlParameter('questionId');
 
     $(function () {
@@ -175,4 +175,4 @@
             }
         }
     }
-})();
+})(jQuery);
