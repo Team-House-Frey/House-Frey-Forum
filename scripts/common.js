@@ -22,6 +22,11 @@ var common = (function ($) {
 
             $('#submit-login').click(loginUser);
             $('#logout-btn').click(logoutUser);
+            $('#login-username, #login-password').keyup(function (e) {
+                if (e.keyCode == 13) {
+                    loginUser();
+                }
+            });
         });
     });
 
