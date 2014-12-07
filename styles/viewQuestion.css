@@ -78,8 +78,11 @@ main {
     main > div .new-answer-wrapper {
       margin-top: 2%; }
       main > div .new-answer-wrapper input {
+        width: 40%;
         height: 30px;
-        padding: 1%; }
+        padding: 1%;
+        margin: 2% auto;
+        display: block; }
       main > div .new-answer-wrapper button {
         margin-bottom: 2%;
         height: 35px;
@@ -115,9 +118,8 @@ main {
         main > div .new-answer-wrapper > #new-answer label.error {
           color: red;
           display: block;
-          margin-top: 5%;
           text-align: center;
-          font-size: 2.2rem; }
+          font-size: 2rem; }
         main > div .new-answer-wrapper > #new-answer textarea {
           display: block;
           margin: 2% auto;

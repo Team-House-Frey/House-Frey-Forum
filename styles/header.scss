@@ -22,10 +22,13 @@ html {
       max-width: 70%;
       margin: 0 auto;
       aside ul li a {
-        background: url("../images/nav_forums.png") no-repeat;
+        &:before{
+          content: url("../images/nav_forums.png");
+          display: inline-block;
+        }
         color: #fff;
         text-align: right;
-        height: 40px;
+        height: 100%;
         width: 110px;
         display: block;
         outline: none;
@@ -107,6 +110,7 @@ html {
           outline: none;
           &:before {
             content: url("../images/nav_content.png");
+            vertical-align: -50%;
           }
         }
         #registration {
@@ -115,6 +119,7 @@ html {
           outline: none;
           &:before {
             content: url("../images/nav_members.png");
+            vertical-align: -50%;
           }
         }
         #index {
@@ -122,6 +127,7 @@ html {
           outline: none;
           &:before {
             content: url("../images/nav_home.png");
+            vertical-align: -50%;
           }
         }
         #nav-menu {

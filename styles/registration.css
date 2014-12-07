@@ -26,6 +26,7 @@ main {
       margin-bottom: 3%; }
       main .registration-form div input {
         float: right;
+        width: 65%;
         height: 30px;
         border-radius: 2px;
         border: 1px solid #e95031;
@@ -38,7 +39,11 @@ main {
         min-width: 120px;
         text-align: left; }
       main .registration-form div label.error {
-        color: #E95031; }
+        display: block;
+        width: 100%;
+        color: red;
+        text-align: center;
+        margin-top: 1%; }
       main .registration-form div:after {
         content: ".";
         visibility: hidden;
@@ -46,7 +51,7 @@ main {
         height: 0;
         clear: both; }
     main .registration-form .user-data-wrapper {
-      width: 60%;
+      width: 55%;
       margin: 2% auto; }
       main .registration-form .user-data-wrapper:after {
         content: ".";

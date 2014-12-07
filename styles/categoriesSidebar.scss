@@ -14,17 +14,26 @@ aside {
       text-align: left;
       font-size: 1.5rem;
       vertical-align: middle;
+      padding-left: 1%;
       &:before {
         content: url("../images/nav_forums.png");
+        vertical-align: middle;
+        display: inline-block;
       }
       a {
+        display: inline-block;
         color: #fff;
         text-align: right;
+        height: 100%;
+        vertical-align: middle;
         &:hover {
           font-size: 1.9rem;
           text-decoration: none;
           color: orange; }
       }
+    }
+    .selected-category{
+      background: darkgrey;
     }
   }
 }

@@ -31,6 +31,7 @@ main{
       margin-bottom: 3%;
       input{
         float: right;
+        width: 65%;
         height: 30px;
         border-radius: 2px;
         border: 1px solid $customRed;
@@ -46,7 +47,11 @@ main{
         text-align: left;
       }
       label.error {
-        color: #E95031;
+        display: block;
+        width: 100%;
+        color: red;
+        text-align: center;
+        margin-top: 1%;
       }
       &:after{
         content: ".";
@@ -57,7 +62,7 @@ main{
       }
     }
     .user-data-wrapper{
-      width: 60%;
+      width: 55%;
       margin: 2% auto;
       &:after{
         content: ".";

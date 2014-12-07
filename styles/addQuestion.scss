@@ -32,6 +32,7 @@ main {
     > div{
       width: 90%;
       margin: 0 auto 2% auto;
+      text-align: center;
       &:after{
         content: ".";
         visibility: hidden;
@@ -40,12 +41,13 @@ main {
         clear: both;
       }
       label{
-        vertical-align: top;
+        display: block;
+        margin-bottom: 1%;
       }
       label.error {
         color: red;
-        display: block;
-        margin-top: 5%;
+        margin-top: 2%;
+        text-align: center;
       }
     }
     input, select, textarea{
@@ -53,7 +55,7 @@ main {
       width: 75%;
       border-radius: 2px;
       border: 1px solid $customRed;
-      float: right;
+      display: inline-block;
       &:focus, &:active{
         outline: none;
       }

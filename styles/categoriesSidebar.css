@@ -13,13 +13,21 @@ aside {
       line-height: 30px;
       text-align: left;
       font-size: 1.5rem;
-      vertical-align: middle; }
+      vertical-align: middle;
+      padding-left: 1%; }
       aside ul li:before {
-        content: url("../images/nav_forums.png"); }
+        content: url("../images/nav_forums.png");
+        vertical-align: middle;
+        display: inline-block; }
       aside ul li a {
+        display: inline-block;
         color: #fff;
-        text-align: right; }
+        text-align: right;
+        height: 100%;
+        vertical-align: middle; }
         aside ul li a:hover {
           font-size: 1.9rem;
           text-decoration: none;
           color: orange; }
+    aside ul .selected-category {
+      background: darkgrey; }

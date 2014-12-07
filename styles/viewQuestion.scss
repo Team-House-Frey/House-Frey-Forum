@@ -101,8 +101,11 @@ main {
     .new-answer-wrapper {
       margin-top: 2%;
       input {
+        width: 40%;
         height: 30px;
         padding: 1%;
+        margin: 2% auto;
+        display: block;
       }
       button {
         margin-bottom: 2%;
@@ -145,9 +148,8 @@ main {
         label.error {
           color: red;
           display: block;
-          margin-top: 5%;
           text-align: center;
-          font-size: 2.2rem;
+          font-size: 2rem;
         }
         textarea {
           display: block;

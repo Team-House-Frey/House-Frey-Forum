@@ -23,7 +23,8 @@ main {
       text-align: center; }
     main #new-question > div {
       width: 90%;
-      margin: 0 auto 2% auto; }
+      margin: 0 auto 2% auto;
+      text-align: center; }
       main #new-question > div:after {
         content: ".";
         visibility: hidden;
@@ -31,17 +32,18 @@ main {
         height: 0;
         clear: both; }
       main #new-question > div label {
-        vertical-align: top; }
+        display: block;
+        margin-bottom: 1%; }
       main #new-question > div label.error {
         color: red;
-        display: block;
-        margin-top: 5%; }
+        margin-top: 2%;
+        text-align: center; }
     main #new-question input, main #new-question select, main #new-question textarea {
       height: 35px;
       width: 75%;
       border-radius: 2px;
       border: 1px solid #e95031;
-      float: right; }
+      display: inline-block; }
       main #new-question input:focus, main #new-question input:active, main #new-question select:focus, main #new-question select:active, main #new-question textarea:focus, main #new-question textarea:active {
         outline: none; }
     main #new-question input, main #new-question select, main #new-question textarea {
