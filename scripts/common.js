@@ -224,31 +224,23 @@ var common = (function ($) {
     }
 
     function search() {
-        var str = $(this).val().toLowerCase();
+        var str = $(this).val().toLowerCase(),
+            $questions = $('#main-content').children('article').hide(),
+            $titleSelector = $questions.children('a'),
+            $contentSelector = $questions.find('.nickname');
+
         if (!str) {
             loadQuestions();
         }
 
         $('#page-navigation').hide();
-        $('#main-content').children('article').hide()/*.each(function () {
-            var text = $(this).children('a').text().toLowerCase();
-            if (text.indexOf(str) > -1) {
-                $(this).show();
-            }
-        })*/;
+        displayQuestions($titleSelector);
+        displayQuestions($contentSelector);
 
-        var $titleSelector = $('#main-content article a'),
-            $contentSelector = $('#main-content article .nickname');
-
-        display($titleSelector);
-        display($contentSelector);
-
-        function display(selector) {
-            selector.each(function () {
-                var $text = $(this).text();
-
-                if($text.indexOf(str) > -1) {
-                    //$(this).parent().show();
+        function displayQuestions(selectors) {
+            selectors.each(function () {
+                var text = $(this).text().toLowerCase();
+                if (text.indexOf(str) > -1) {
                     $(this).closest('article').show();
                 }
             });
