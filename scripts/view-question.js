@@ -1,5 +1,5 @@
 (function ($) {
-    var CURRENT_QUESTION_ID = getUrlParameter('questionId');
+    var CURRENT_QUESTION_ID = common.getUrlParameter('questionId');
 
     $(function () {
         common.loadCategories();
@@ -162,17 +162,6 @@
         } else {
             $newAnswer.slideUp();
             $newAnswer.attr('data-is-hidden', 'true');
-        }
-    }
-
-    function getUrlParameter(sParam) {
-        var sPageURL = window.location.search.substring(1);
-        var sURLVariables = sPageURL.split('&');
-        for (var i = 0; i < sURLVariables.length; i++) {
-            var sParameterName = sURLVariables[i].split('=');
-            if (sParameterName[0] == sParam) {
-                return sParameterName[1];
-            }
         }
     }
 })(jQuery);
