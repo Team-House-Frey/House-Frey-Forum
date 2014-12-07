@@ -24,7 +24,8 @@ aside {
         color: #fff;
         text-align: right;
         height: 100%;
-        vertical-align: middle; }
+        vertical-align: middle;
+        text-decoration: none; }
         aside ul li a:hover {
           font-size: 1.9rem;
           text-decoration: none;

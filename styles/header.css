@@ -9,7 +9,7 @@ html {
   width: 100%; }
   html body {
     background-color: #55728b;
-    font: normal 11px "Open Sans", tahoma, helvetica, arial, sans-serif;
+    font: normal 11px "Open Sans",tahoma,helvetica,arial,sans-serif;
     position: relative;
     zoom: 1;
     background-image: url("../images/shattered.png"); }
@@ -17,6 +17,7 @@ html {
       max-width: 70%;
       margin: 0 auto; }
       html body header aside ul li a {
+        text-decoration: none;
         color: #fff;
         text-align: right;
         height: 100%;
@@ -47,7 +48,8 @@ html {
       html body header ol li a, html body header ul li a {
         display: block;
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        text-decoration: none; }
       html body header .logo-container {
         background-color: #323232;
         color: white;
