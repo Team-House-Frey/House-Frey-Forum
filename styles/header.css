@@ -79,6 +79,8 @@ html {
                 cursor: pointer;
                 background: #323232;
                 color: #FFF; }
+                html body header .sub-container #login-container form input[type='button']:hover {
+                  background: #464646; }
         html body header .sub-container #logged-in-container {
           width: 60%;
           color: #ffffff;

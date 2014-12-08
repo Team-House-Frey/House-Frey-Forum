@@ -92,6 +92,9 @@ html {
                 cursor: pointer;
                 background: $customBlack;
                 color: #FFF;
+                &:hover {
+                  background: rgb(70, 70, 70)
+                }
               }
             }
           }
