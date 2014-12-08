@@ -2,14 +2,14 @@
     $(function () {
         var newQuestion = $('#new-question');
 
-        if(!localStorage['session']) {
+        if (!localStorage['session']) {
             newQuestion.html('<article>Please login or <a href="registration.html">register</a> in order to add a question.</article>');
             return;
         }
 
         newQuestion.validate();
         $('#add-question-btn').click(function () {
-            if(newQuestion.valid()) {
+            if (newQuestion.valid()) {
                 addQuestion();
             }
         });
@@ -18,7 +18,6 @@
     function addQuestion() {
         var title = $('#question-title').val(),
             content = $('#question-content').val(),
-            tags = $('#question-tags').val().split(/\s*,\s*/),
             category = $('#question-category').val();
 
         $.ajax({
@@ -33,34 +32,36 @@
                 'category': {'__type':'Pointer','className':'Category','objectId':category}
             }),
             contentType: 'application/json',
-            success: function (question) {
-                processAdditionTagsToQuestion(question, tags);
-            }
+            success: processAddingTagsToQuestion
         });
     }
 
-    function processAdditionTagsToQuestion(question, tagsToBeAdded) {
-        var tagsFilter = {'$in': tagsToBeAdded};
+    function processAddingTagsToQuestion(question) {
+        var tagsToBeAdded = $('#question-tags').val().split(/\s*,\s*/),
+            tagsFilter = {'$in': tagsToBeAdded};
 
         $.ajax({
             method: 'GET',
             url: 'https://api.parse.com/1/classes/Tag?where={"name":' + JSON.stringify(tagsFilter) + '}',
-            success: function (data) {
-                var databaseTagsMatches = {};
-                data.results.forEach(function (tag) {
-                    databaseTagsMatches[tag.name] = tag.objectId;
-                });
-                tagsToBeAdded.forEach(function (tagName) {
-                    var tagExistsInDatabase = databaseTagsMatches.hasOwnProperty(tagName);
-                    if (tagExistsInDatabase === false) {
-                        createNewTagAndAddToQuestion(question, tagName);
-                    } else {
-                        addExistingTagToQuestion(question, databaseTagsMatches[tagName]);
-                    }
-                });
-                processRedirectionToQuestion(question);
-            }
+            success: tagsFound
         });
+
+        function tagsFound(data) {
+            var databaseTagsMatches = {};
+            data.results.forEach(function (tag) {
+                databaseTagsMatches[tag.name] = tag.objectId;
+            });
+
+            tagsToBeAdded.forEach(function (tagName) {
+                if (databaseTagsMatches.hasOwnProperty(tagName)) {
+                    addExistingTagToQuestion(question, databaseTagsMatches[tagName]);
+                } else {
+                    createNewTagAndAddToQuestion(question, tagName);
+                }
+            });
+
+            updateActivityAndRedirect(question);
+        }
     }
 
     function createNewTagAndAddToQuestion(question, tagName) {
@@ -71,10 +72,12 @@
                 'name': tagName
             }),
             contentType: 'application/json',
-            success: function (tagCreated) {
-                addExistingTagToQuestion(question, tagCreated.objectId);
-            }
+            success: tagCreated
         });
+
+        function tagCreated(tag) {
+            addExistingTagToQuestion(question, tag.objectId);
+        }
     }
 
     function addExistingTagToQuestion(question, tag) {
@@ -89,7 +92,7 @@
         });
     }
 
-    function processRedirectionToQuestion(question) {
+    function updateActivityAndRedirect(question) {
         var headersWithToken = JSON.parse(JSON.stringify(common.headers));
         headersWithToken['X-Parse-Session-Token'] = localStorage['session'];
         $.ajax({
@@ -98,13 +101,12 @@
             url: 'https://api.parse.com/1/classes/_User/' + localStorage['userId'],
             data: '{"activity":{"__op":"Increment","amount":1}}',
             contentType: 'application/json',
-            success: function () {
-                redirectToQuestion(question);
-            }
+            success: redirectToQuestion,
+            error: redirectToQuestion
         });
-    }
 
-    function redirectToQuestion(question) {
+        function redirectToQuestion() {
             location.href = 'viewQuestion.html?questionId=' + question.objectId;
+        }
     }
 })(jQuery);

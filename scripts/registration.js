@@ -7,7 +7,7 @@
         var form = $('#registrationForm');
         form.validate();
         $('#submit').click(function () {
-            if(form.valid()) {
+            if (form.valid()) {
                 var registrationData = {
                     'username': $('#username').val(),
                     'password': $('#password').val(),

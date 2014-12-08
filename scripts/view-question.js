@@ -92,6 +92,7 @@
         data.results.forEach(function (tag) {
             tagsIds.push(tag.tag.objectId);
         });
+
         loadTags(tagsIds);
     }
 
@@ -106,11 +107,10 @@
 
     function visualizeTags(data) {
         var $tagsSpan = $('<span class="tags">').text('Tags: ');
-
         data.results.forEach(function (tag) {
-            var $link = $('<a>').text(tag.name)
-                .attr('href', 'viewQuestionsByTag.html?tag=' + tag.objectId);
-            $tagsSpan.append($link);
+            $('<a>').text(tag.name)
+                .attr('href', 'viewQuestionsByTag.html?tag=' + tag.objectId)
+                .appendTo($tagsSpan);
         });
 
         $('.question').append('', $tagsSpan);
@@ -132,10 +132,10 @@
                 'question': {'__type': 'Pointer', 'className': 'Question', 'objectId': CURRENT_QUESTION_ID}
             }),
             contentType: 'application/json',
-            success: updateActivity
+            success: updateActivityAndReload
         });
 
-        function updateActivity() {
+        function updateActivityAndReload() {
             if (localStorage['session']) {
                 var headersWithToken = JSON.parse(JSON.stringify(common.headers));
                 headersWithToken['X-Parse-Session-Token'] = localStorage['session'];
@@ -157,11 +157,9 @@
     function toggleReplyArea() {
         var $newAnswer = $('#new-answer');
         if ($newAnswer.attr('data-is-hidden') === 'true') {
-            $newAnswer.slideDown();
-            $newAnswer.attr('data-is-hidden', 'false');
+            $newAnswer.slideDown().attr('data-is-hidden', 'false');
         } else {
-            $newAnswer.slideUp();
-            $newAnswer.attr('data-is-hidden', 'true');
+            $newAnswer.slideUp().attr('data-is-hidden', 'true');
         }
     }
 })(jQuery);
